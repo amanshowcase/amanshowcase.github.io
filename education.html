@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Aman Nagpal's academic background, MBA in Human Resource Management, engineering degree, professional learning and research.">
+
+    <meta name="author" content="Aman Nagpal">
+
+    <title>Education | Aman Nagpal — Aman Showcase</title>
+
+    <style>
+        :root {
+            --bg: #0b1022;
+            --section: #10172b;
+            --card: #121b30;
+            --text: #f1f5f9;
+            --muted: #a8b5cb;
+            --blue: #60a5fa;
+            --purple: #818cf8;
+            --border: #29364e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1140px, 90%);
+            margin: auto;
+        }
+
+        /* NAVIGATION — MATCHES ABOUT AND EXPERIENCE */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 16, 34, 0.96);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(14px);
+        }
+
+        .navbar {
+            min-height: 58px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--blue);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .nav-links a {
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--blue);
+        }
+
+        /* PAGE INTRODUCTION */
+
+        .page-intro {
+            padding: 95px 0 75px;
+            text-align: center;
+            background:
+                radial-gradient(
+                    ellipse at top,
+                    rgba(59, 130, 246, 0.12),
+                    transparent 65%
+                );
+        }
+
+        .eyebrow {
+            display: inline-block;
+            color: var(--blue);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: clamp(34px, 5vw, 52px);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(
+                90deg,
+                var(--blue),
+                var(--purple)
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .intro-text {
+            max-width: 720px;
+            margin: auto;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        /* GENERAL SECTIONS */
+
+        section {
+            padding: 70px 0;
+        }
+
+        .section-heading {
+            margin-bottom: 32px;
+        }
+
+        .section-heading .eyebrow {
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: clamp(25px, 4vw, 34px);
+            line-height: 1.3;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .section-text {
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 760px;
+            margin-top: 10px;
+        }
+
+        /* ACADEMIC QUALIFICATIONS */
+
+        .academic-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 22px;
+        }
+
+        .academic-card {
+            position: relative;
+            padding: 30px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            transition: transform 0.2s ease,
+                        border-color 0.2s ease;
+        }
+
+        .academic-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--blue);
+        }
+
+        .academic-card.featured {
+            background:
+                radial-gradient(
+                    ellipse at top right,
+                    rgba(96, 165, 250, 0.10),
+                    transparent 65%
+                ),
+                var(--card);
+            border-color: rgba(96, 165, 250, 0.4);
+        }
+
+        .qualification-label {
+            display: inline-block;
+            color: var(--blue);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .academic-card h3 {
+            font-size: 21px;
+            line-height: 1.4;
+            margin-bottom: 9px;
+        }
+
+        .academic-card .specialisation {
+            color: #cbd5e1;
+            font-size: 14px;
+            margin-bottom: 13px;
+        }
+
+        .institution {
+            color: var(--muted);
+            font-size: 13px;
+            margin-bottom: 18px;
+        }
+
+        .academic-description {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .qualification-status {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 6px 12px;
+            border: 1px solid rgba(96, 165, 250, 0.35);
+            border-radius: 30px;
+            background: rgba(96, 165, 250, 0.07);
+            color: #93c5fd;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* ACADEMIC PERSPECTIVE */
+
+        .perspective-section {
+            background: var(--section);
+        }
+
+        .perspective-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .perspective-card {
+            padding: 25px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: transform 0.2s ease,
+                        border-color 0.2s ease;
+        }
+
+        .perspective-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--blue);
+        }
+
+        .card-number {
+            display: block;
+            color: var(--blue);
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 13px;
+        }
+
+        .perspective-card h3 {
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
+
+        .perspective-card p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        /* PROFESSIONAL DEVELOPMENT */
+
+        .learning-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .learning-card {
+            padding: 20px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            transition: border-color 0.2s ease;
+        }
+
+        .learning-card:hover {
+            border-color: var(--blue);
+        }
+
+        .learning-card h3 {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 6px;
+        }
+
+        .learning-card p {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .learning-note {
+            margin-top: 22px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        /* RESEARCH FEATURE */
+
+        .research-section {
+            background:
+                radial-gradient(
+                    ellipse at 90% 50%,
+                    rgba(99, 102, 241, 0.12),
+                    transparent 55%
+                ),
+                var(--bg);
+        }
+
+        .research-card {
+            padding: 34px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .research-card h3 {
+            font-size: 22px;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+
+        .research-card p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .research-focus {
+            padding: 22px;
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+        }
+
+        .research-focus h4 {
+            font-size: 12px;
+            color: var(--blue);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .research-focus ul {
+            list-style: none;
+        }
+
+        .research-focus li {
+            color: #cbd5e1;
+            font-size: 12px;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .research-focus li:last-child {
+            border-bottom: none;
+        }
+
+        .text-link {
+            display: inline-block;
+            color: var(--blue);
+            font-size: 13px;
+            font-weight: 700;
+            margin-top: 20px;
+        }
+
+        .text-link:hover {
+            text-decoration: underline;
+        }
+
+        /* CONTACT CTA */
+
+        .contact-cta {
+            padding: 65px 0;
+            text-align: center;
+            background: var(--section);
+            border-top: 1px solid var(--border);
+        }
+
+        .contact-cta h2 {
+            margin-bottom: 12px;
+        }
+
+        .contact-cta p {
+            max-width: 620px;
+            margin: 0 auto 22px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 19px;
+            border-radius: 7px;
+            background: linear-gradient(
+                100deg,
+                #3b82f6,
+                #6366f1
+            );
+            color: white;
+            font-size: 13px;
+            font-weight: 700;
+            transition: transform 0.2s ease,
+                        box-shadow 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.25);
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 22px 0;
+            background: #080d18;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-content p,
+        .footer-content a {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .footer-content a:hover {
+            color: var(--blue);
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 900px) {
+            .navbar {
+                flex-direction: column;
+                justify-content: center;
+                padding: 12px 0;
+            }
+
+            .nav-links {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px 18px;
+            }
+
+            .academic-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .perspective-grid,
+            .learning-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .container {
+                width: 90%;
+            }
+
+            .page-intro {
+                padding: 70px 0 55px;
+            }
+
+            section {
+                padding: 55px 0;
+            }
+
+            .academic-grid,
+            .perspective-grid,
+            .learning-grid,
+            .research-card {
+                grid-template-columns: 1fr;
+            }
+
+            .academic-card,
+            .research-card {
+                padding: 24px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header>
+        <nav class="navbar container" aria-label="Main navigation">
+
+            <a href="index.html" class="logo">
+                AMAN<span>SHOWCASE</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="experience.html">Experience</a>
+                <a href="education.html" class="active"
+                   aria-current="page">Education</a>
+                <a href="projects.html">Projects</a>
+                <a href="resume.html">Resume</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- PAGE INTRODUCTION -->
+
+        <section class="page-intro">
+            <div class="container">
+
+                <span class="eyebrow">ACADEMIC BACKGROUND</span>
+
+                <h1>
+                    Education &amp;
+                    <span class="gradient-text">Learning</span>
+                </h1>
+
+                <p class="intro-text">
+                    An academic foundation in computer science,
+                    complemented by postgraduate learning in
+                    human resource management, business and
+                    organisational development.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- ACADEMIC QUALIFICATIONS -->
+
+        <section>
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">FORMAL EDUCATION</span>
+                    <h2>Academic Qualifications</h2>
+                    <p class="section-text">
+                        Combining a technical foundation with
+                        postgraduate education in people and business
+                        management.
+                    </p>
+                </div>
+
+                <div class="academic-grid">
+
+                    <!-- MBA -->
+
+                    <article class="academic-card featured">
+
+                        <span class="qualification-label">
+                            Postgraduate
+                        </span>
+
+                        <h3>
+                            Master of Business Administration
+                        </h3>
+
+                        <p class="specialisation">
+                            Human Resource Management
+                        </p>
+
+                        <p class="institution">
+                            GLA University, Mathura
+                            <br>
+                            Online Programme
+                        </p>
+
+                        <p class="academic-description">
+                            Completed postgraduate studies focused
+                            on human resource management, connecting
+                            people-related perspectives with broader
+                            business and organisational learning.
+                        </p>
+
+                        <span class="qualification-status">
+                            Completed · September 2026
+                        </span>
+
+                    </article>
+
+
+                    <!-- ENGINEERING -->
+
+                    <article class="academic-card">
+
+                        <span class="qualification-label">
+                            Undergraduate
+                        </span>
+
+                        <h3>
+                            Bachelor of Engineering
+                        </h3>
+
+                        <p class="specialisation">
+                            Computer Science
+                        </p>
+
+                        <p class="institution">
+                            GLA Institute of Technology, Mathura
+                            <br>
+                            Dr. B.R. Ambedkar University · 2002
+                        </p>
+
+                        <p class="academic-description">
+                            An engineering foundation in computer
+                            science that provided an early grounding
+                            in technical concepts and structured
+                            problem-solving.
+                        </p>
+
+                        <span class="qualification-status">
+                            Degree · 2002
+                        </span>
+
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ACADEMIC PERSPECTIVE -->
+
+        <section class="perspective-section">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">AREAS OF LEARNING</span>
+                    <h2>Connecting Education with Practice</h2>
+                    <p class="section-text">
+                        Areas that connect academic learning
+                        with professional experience and
+                        management perspectives.
+                    </p>
+                </div>
+
+                <div class="perspective-grid">
+
+                    <article class="perspective-card">
+                        <span class="card-number">01</span>
+
+                        <h3>People &amp; Human Resources</h3>
+
+                        <p>
+                            Human resource management, recruitment,
+                            employee learning, people management
+                            and employee experience.
+                        </p>
+                    </article>
+
+
+                    <article class="perspective-card">
+                        <span class="card-number">02</span>
+
+                        <h3>Organisational Behaviour</h3>
+
+                        <p>
+                            Understanding human behaviour,
+                            workplace interactions, organisational
+                            culture and the human aspects of change.
+                        </p>
+                    </article>
+
+
+                    <article class="perspective-card">
+                        <span class="card-number">03</span>
+
+                        <h3>Business &amp; Management</h3>
+
+                        <p>
+                            Business operations, management
+                            perspectives, process improvement
+                            and organisational performance.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- PROFESSIONAL DEVELOPMENT -->
+
+        <section>
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">CONTINUOUS LEARNING</span>
+                    <h2>Professional Development</h2>
+                    <p class="section-text">
+                        Selected courses and learning activities
+                        supporting ongoing professional development.
+                    </p>
+                </div>
+
+                <div class="learning-grid">
+
+                    <article class="learning-card">
+                        <h3>Google People Management Essentials</h3>
+                        <p>Google</p>
+                    </article>
+
+                    <article class="learning-card">
+                        <h3>Operations Management Foundation</h3>
+                        <p>LinkedIn Learning</p>
+                    </article>
+
+                    <article class="learning-card">
+                        <h3>Daily Habits of Effective People Management</h3>
+                        <p>LinkedIn Learning</p>
+                    </article>
+
+                    <article class="learning-card">
+                        <h3>Lean Six Sigma Foundation Course</h3>
+                        <p>LinkedIn Learning</p>
+                    </article>
+
+                    <article class="learning-card">
+                        <h3>Ethics in the Age of Generative AI</h3>
+                        <p>LinkedIn Learning</p>
+                    </article>
+
+                    <article class="learning-card">
+                        <h3>Prompt Design in Vertex AI</h3>
+                        <p>Google · 2025</p>
+                    </article>
+
+                </div>
+
+                <p class="learning-note">
+                    Selected introductory courses and professional
+                    learning activities. Formal academic qualifications
+                    are presented separately above.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- MBA RESEARCH -->
+
+        <section class="research-section">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">ACADEMIC RESEARCH</span>
+                    <h2>Research &amp; Exploration</h2>
+                </div>
+
+                <div class="research-card">
+
+                    <div>
+                        <span class="qualification-label">
+                            MBA Research
+                        </span>
+
+                        <h3>
+                            AI Integration, Employee Learning
+                            &amp; Organisational Performance
+                        </h3>
+
+                        <p>
+                            Research examining the impact of
+                            artificial intelligence integration
+                            on employee learning, technostress
+                            and organisational performance,
+                            with attention to training, learning
+                            support and employee development.
+                        </p>
+
+                        <a href="projects.html" class="text-link">
+                            Explore Projects →
+                        </a>
+                    </div>
+
+                    <div class="research-focus">
+
+                        <h4>Research Focus</h4>
+
+                        <ul>
+                            <li>AI integration in organisations</li>
+                            <li>Employee learning and development</li>
+                            <li>Technostress</li>
+                            <li>HRD interventions</li>
+                            <li>Organisational performance</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CONTACT CTA -->
+
+        <section class="contact-cta">
+            <div class="container">
+
+                <span class="eyebrow">BEYOND ACADEMICS</span>
+
+                <h2>Learning Through Experience</h2>
+
+                <p>
+                    My academic background and professional
+                    experience together shape my understanding
+                    of people, processes and business.
+                </p>
+
+                <a href="experience.html" class="btn">
+                    Explore Experience →
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="container footer-content">
+
+            <p>© 2026 Aman Nagpal | Aman Showcase</p>
+
+            <a href="https://www.linkedin.com/in/aman-nagpal10/"
+               target="_blank"
+               rel="noopener noreferrer">
+                LinkedIn
+            </a>
+
+        </div>
+    </footer>
+
+</body>
+</html>
