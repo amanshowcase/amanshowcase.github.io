@@ -5,319 +5,484 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Aman Nagpal's professional experience in recruitment,
-          business operations, IT service delivery and enterprise support.">
+          content="Aman Nagpal's professional experience across recruitment,
+          enterprise IT support, service delivery and business operations.">
+    <meta name="author" content="Aman Nagpal">
 
-    <title>Experience | Aman Nagpal</title>
-
-    <link rel="stylesheet" href="css/style.css">
+    <title>Experience | Aman Nagpal — Aman Showcase</title>
 
     <style>
-        /* EXPERIENCE PAGE */
+        :root {
+            --bg: #0b1022;
+            --section: #10172b;
+            --card: #121b30;
+            --text: #f1f5f9;
+            --muted: #a8b5cb;
+            --blue: #60a5fa;
+            --purple: #818cf8;
+            --border: #29364e;
+        }
 
-        .experience-hero {
-            padding: 65px 8% 55px;
-            background:
-                radial-gradient(
-                    ellipse at 80% 40%,
-                    rgba(96, 165, 250, 0.12),
-                    transparent 48%
-                ),
-                var(--background);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1140px, 90%);
+            margin: auto;
+        }
+
+        /* NAVIGATION — MATCHES ABOUT */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 16, 34, 0.96);
             border-bottom: 1px solid var(--border);
         }
 
-        .experience-hero-content {
-            max-width: 1000px;
+        .navbar {
+            min-height: 58px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--blue);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .nav-links a {
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--blue);
+        }
+
+        /* PAGE INTRODUCTION */
+
+        .page-intro {
+            padding: 95px 0 75px;
+            text-align: center;
+            background:
+                radial-gradient(
+                    ellipse at top,
+                    rgba(59, 130, 246, 0.12),
+                    transparent 65%
+                );
+        }
+
+        .eyebrow {
+            color: var(--blue);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: clamp(34px, 5vw, 52px);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(
+                90deg,
+                var(--blue),
+                var(--purple)
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .intro-text {
+            max-width: 720px;
             margin: auto;
-        }
-
-        .experience-hero h1 {
-            font-size: clamp(30px, 4vw, 42px);
-            line-height: 1.25;
-            letter-spacing: -0.8px;
-            margin-bottom: 18px;
-        }
-
-        .experience-hero p {
-            max-width: 760px;
             color: var(--muted);
             font-size: 15px;
-            line-height: 1.8;
         }
 
-        .experience-section {
-            padding: 65px 8%;
+        /* GENERAL SECTIONS */
+
+        section {
+            padding: 70px 0;
         }
 
-        .experience-section.alt {
-            background: #0e1527;
+        .section-heading {
+            margin-bottom: 32px;
         }
 
-        .experience-container {
-            max-width: 1150px;
-            margin: auto;
+        .section-heading .eyebrow {
+            margin-bottom: 8px;
         }
 
-        .experience-heading {
-            max-width: 760px;
-            margin: 0 auto 38px;
-            text-align: center;
+        h2 {
+            font-size: clamp(25px, 4vw, 34px);
+            line-height: 1.3;
         }
 
-        .experience-heading h2 {
-            font-size: clamp(24px, 3vw, 32px);
-            line-height: 1.35;
-            margin-bottom: 12px;
+        h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
         }
 
-        .experience-heading p {
+        .section-text {
             color: var(--muted);
             font-size: 14px;
-            line-height: 1.8;
         }
 
-        /* OVERVIEW CARDS */
+        /* EXPERIENCE SNAPSHOT */
 
-        .experience-overview {
+        .snapshot-grid {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 22px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
 
-        .experience-overview .snapshot-card {
-            height: 100%;
+        .snapshot-card {
+            padding: 25px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            border-radius: 12px;
+            transition: transform 0.2s ease,
+                        border-color 0.2s ease;
+        }
+
+        .snapshot-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--blue);
+        }
+
+        .card-number {
+            color: var(--blue);
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+
+        .snapshot-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .snapshot-card p {
+            color: var(--muted);
+            font-size: 13px;
         }
 
         /* CAREER TIMELINE */
 
-        .career-timeline {
-            max-width: 1000px;
-            margin: auto;
-            position: relative;
-            padding-left: 30px;
-            border-left: 2px solid rgba(96, 165, 250, 0.35);
+        .journey-section {
+            background: var(--section);
         }
 
-        .career-item {
+        .timeline {
+            max-width: 900px;
+            margin: auto;
+            border-left: 2px solid var(--border);
+            padding-left: 28px;
+        }
+
+        .timeline-item {
             position: relative;
             margin-bottom: 25px;
-            padding: 25px 28px;
-            background: var(--surface);
+            padding: 23px;
+            background: var(--card);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            transition: transform 0.3s ease,
-                        border-color 0.3s ease;
+            border-radius: 11px;
+            transition: border-color 0.2s ease,
+                        transform 0.2s ease;
         }
 
-        .career-item:last-child {
+        .timeline-item:last-child {
             margin-bottom: 0;
         }
 
-        .career-item:hover {
+        .timeline-item:hover {
+            border-color: var(--blue);
             transform: translateY(-3px);
-            border-color: var(--accent);
         }
 
-        .career-item::before {
+        .timeline-item::before {
             content: "";
             position: absolute;
-            left: -39px;
-            top: 29px;
+            left: -36px;
+            top: 28px;
             width: 13px;
             height: 13px;
             border-radius: 50%;
-            background: var(--accent);
-            border: 3px solid var(--background);
-            box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.25);
+            background: var(--blue);
+            border: 3px solid var(--section);
         }
 
-        .career-date {
+        .timeline-date {
             display: inline-block;
-            margin-bottom: 8px;
-            color: var(--accent);
+            margin-bottom: 7px;
+            color: var(--blue);
             font-size: 12px;
             font-weight: 700;
-            letter-spacing: 0.7px;
         }
 
-        .career-item h3 {
-            font-size: 18px;
-            line-height: 1.4;
+        .timeline-item h3 {
             margin-bottom: 4px;
         }
 
-        .career-company {
-            color: #d4deee;
+        .timeline-company {
+            color: #cbd5e1;
             font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 13px;
+            margin-bottom: 12px;
         }
 
-        .career-description {
+        .timeline-item p {
             color: var(--muted);
             font-size: 13px;
             line-height: 1.8;
         }
 
-        .career-tags {
+        .tag-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 9px;
             margin-top: 17px;
         }
 
-        .career-tags span {
-            display: inline-block;
-            padding: 5px 11px;
-            color: #dce7f7;
-            background: rgba(255, 255, 255, 0.04);
+        .tag {
+            padding: 6px 12px;
             border: 1px solid var(--border);
-            border-radius: 20px;
+            border-radius: 30px;
+            color: #cbd5e1;
             font-size: 11px;
-            line-height: 1.5;
+            background: rgba(255, 255, 255, 0.025);
         }
 
-        /* FUNCTIONAL CAPABILITIES */
+        /* FUNCTIONAL EXPERTISE */
 
-        .capability-grid {
+        .expertise-grid {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 22px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
         }
 
-        .capability-card {
-            height: 100%;
+        .expertise-card {
             padding: 25px;
-            background: var(--surface);
             border: 1px solid var(--border);
+            background: var(--card);
             border-radius: 12px;
-            transition: transform 0.3s ease,
-                        border-color 0.3s ease;
+            transition: transform 0.2s ease,
+                        border-color 0.2s ease;
         }
 
-        .capability-card:hover {
-            transform: translateY(-3px);
-            border-color: var(--accent);
+        .expertise-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--blue);
         }
 
-        .capability-card h3 {
-            font-size: 17px;
+        .expertise-card h3 {
             margin-bottom: 10px;
         }
 
-        .capability-card p {
+        .expertise-card p {
             color: var(--muted);
             font-size: 13px;
-            line-height: 1.8;
         }
 
-        /* PEOPLE AND ORGANISATIONS */
+        /* PEOPLE & ORGANISATIONS */
 
-        .people-perspective {
-            max-width: 1000px;
-            margin: auto;
-            padding: 30px;
-            background: linear-gradient(
-                135deg,
-                rgba(96, 165, 250, 0.10),
-                var(--surface)
-            );
-            border: 1px solid rgba(96, 165, 250, 0.25);
-            border-radius: 14px;
+        .perspective-section {
+            background: var(--section);
         }
 
-        .people-perspective h2 {
-            font-size: 23px;
-            margin-bottom: 12px;
+        .perspective-card {
+            padding: 28px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
         }
 
-        .people-perspective p {
+        .perspective-card p {
             color: var(--muted);
             font-size: 14px;
-            line-height: 1.85;
+            margin-top: 12px;
         }
 
-        /* PAGE CTA */
+        /* CONNECT */
 
-        .experience-cta {
-            padding: 65px 8%;
+        .connect {
+            padding: 65px 0;
             text-align: center;
-            background: var(--surface);
-            border-top: 1px solid var(--border);
+            background:
+                linear-gradient(
+                    120deg,
+                    rgba(37, 99, 235, 0.09),
+                    rgba(124, 58, 237, 0.09)
+                );
         }
 
-        .experience-cta h2 {
-            font-size: clamp(24px, 3vw, 32px);
-            margin-bottom: 12px;
-        }
-
-        .experience-cta p {
-            max-width: 620px;
-            margin: 0 auto 25px;
+        .connect p {
             color: var(--muted);
             font-size: 14px;
+            margin: 12px auto 24px;
         }
 
-        .experience-cta-buttons {
+        .button {
+            display: inline-block;
+            padding: 11px 22px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            background: linear-gradient(
+                100deg,
+                #3b82f6,
+                #6366f1
+            );
+            color: white;
+            transition: opacity 0.2s ease;
+        }
+
+        .button:hover {
+            opacity: 0.85;
+        }
+
+        .secondary-button {
+            display: inline-block;
+            padding: 10px 21px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            color: var(--text);
+            font-size: 13px;
+            font-weight: 600;
+            transition: border-color 0.2s ease;
+        }
+
+        .secondary-button:hover {
+            border-color: var(--blue);
+        }
+
+        .connect-buttons {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 12px;
         }
 
-        /* RESPONSIVE */
+        /* FOOTER */
 
-        @media (max-width: 900px) {
-            .experience-overview {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
+        footer {
+            padding: 23px 0;
+            border-top: 1px solid var(--border);
+            background: #080c19;
+            color: var(--muted);
+            font-size: 11px;
         }
 
-        @media (max-width: 650px) {
-            .experience-hero {
-                padding: 50px 6% 40px;
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-content a:hover {
+            color: var(--blue);
+        }
+
+        /* MOBILE RESPONSIVENESS */
+
+        @media (max-width: 760px) {
+            .navbar {
+                flex-direction: column;
+                padding: 13px 0;
             }
 
-            .experience-section {
-                padding: 55px 6%;
+            .nav-links {
+                gap: 14px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
-            .experience-overview,
-            .capability-grid {
+            .page-intro {
+                padding: 65px 0 55px;
+            }
+
+            .snapshot-grid,
+            .expertise-grid {
                 grid-template-columns: 1fr;
             }
 
-            .career-timeline {
-                padding-left: 23px;
+            section {
+                padding: 52px 0;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .nav-links {
+                gap: 10px;
+                font-size: 11px;
             }
 
-            .career-item {
-                padding: 21px 19px;
+            .timeline {
+                padding-left: 22px;
             }
 
-            .career-item::before {
-                left: -32px;
+            .timeline-item {
+                padding: 17px;
             }
 
-            .people-perspective {
-                padding: 22px;
+            .timeline-item::before {
+                left: -30px;
             }
 
-            .experience-cta {
-                padding: 55px 6%;
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
             }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .career-item,
-            .capability-card {
-                transition: none;
-            }
-
-            .career-item:hover,
-            .capability-card:hover {
-                transform: none;
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition: none !important;
             }
         }
     </style>
@@ -325,15 +490,15 @@
 
 <body>
 
-    <!-- NAVIGATION: MATCHES HOMEPAGE -->
+    <!-- NAVIGATION -->
 
-    <header class="header">
-        <nav class="navbar">
+    <header>
+        <div class="container navbar">
             <a href="index.html" class="logo">
                 AMAN<span>SHOWCASE</span>
             </a>
 
-            <div class="nav-links">
+            <nav class="nav-links" aria-label="Main navigation">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="experience.html" class="active">Experience</a>
@@ -341,94 +506,81 @@
                 <a href="projects.html">Projects</a>
                 <a href="resume.html">Resume</a>
                 <a href="contact.html">Contact</a>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
 
     <main>
 
-        <!-- INTRODUCTION -->
+        <!-- PAGE INTRODUCTION -->
 
-        <section class="experience-hero">
-            <div class="experience-hero-content">
-
-                <span class="eyebrow">
-                    PROFESSIONAL EXPERIENCE
-                </span>
+        <section class="page-intro">
+            <div class="container">
+                <div class="eyebrow">PROFESSIONAL EXPERIENCE</div>
 
                 <h1>
-                    Experience &amp;
-                    <span class="highlight">Expertise</span>
+                    Experience Across<br>
+                    <span class="gradient-text">
+                        Functions &amp; Industries
+                    </span>
                 </h1>
 
-                <p>
+                <p class="intro-text">
                     A professional journey spanning recruitment,
-                    enterprise IT support, service operations and
-                    business coordination, with a focus on
-                    operational discipline, process execution
-                    and stakeholder engagement.
+                    enterprise IT support, service delivery and
+                    business operations, shaped by operational
+                    responsibilities, stakeholder engagement
+                    and continuous learning.
                 </p>
-
             </div>
         </section>
 
         <!-- PROFESSIONAL OVERVIEW -->
 
-        <section class="experience-section">
-            <div class="experience-container">
+        <section>
+            <div class="container">
 
-                <div class="experience-heading">
-                    <span class="eyebrow">
-                        PROFESSIONAL OVERVIEW
-                    </span>
-
-                    <h2>
-                        A Career Across Functions &amp; Industries
-                    </h2>
-
-                    <p>
-                        Experience across different business
-                        environments, combining customer-facing
-                        operations, enterprise support and
-                        business coordination.
+                <div class="section-heading">
+                    <div class="eyebrow">PROFESSIONAL OVERVIEW</div>
+                    <h2>Experience Beyond Job Titles</h2>
+                    <p class="section-text">
+                        A combination of functional exposure
+                        across people, technology and business.
                     </p>
                 </div>
 
-                <div class="experience-overview">
+                <div class="snapshot-grid">
 
                     <article class="snapshot-card">
-                        <span class="card-number">01</span>
-
+                        <div class="card-number">01</div>
                         <h3>Business Operations</h3>
-
                         <p>
                             Business coordination, digital
-                            documentation, process support
-                            and operational research.
+                            documentation, market research,
+                            administrative support and
+                            process execution.
                         </p>
                     </article>
 
                     <article class="snapshot-card">
-                        <span class="card-number">02</span>
-
-                        <h3>IT Service Delivery</h3>
-
+                        <div class="card-number">02</div>
+                        <h3>Enterprise Service Delivery</h3>
                         <p>
-                            Enterprise support, incident
-                            ownership, access management
-                            and service operations.
+                            Incident ownership, user lifecycle
+                            management, access administration,
+                            escalation handling and
+                            operational continuity.
                         </p>
                     </article>
 
                     <article class="snapshot-card">
-                        <span class="card-number">03</span>
-
-                        <h3>People &amp; Client Operations</h3>
-
+                        <div class="card-number">03</div>
+                        <h3>Recruitment &amp; People Operations</h3>
                         <p>
-                            Recruitment coordination,
-                            customer engagement, escalation
-                            handling and stakeholder communication.
+                            Candidate sourcing, recruitment
+                            coordination, interview logistics,
+                            recruitment MIS and employee
+                            lifecycle support.
                         </p>
                     </article>
 
@@ -438,330 +590,345 @@
 
         <!-- CAREER TIMELINE -->
 
-        <section class="experience-section alt">
-            <div class="experience-container">
+        <section class="journey-section">
+            <div class="container">
 
-                <div class="experience-heading">
-                    <span class="eyebrow">
-                        CAREER PROGRESSION
-                    </span>
-
+                <div class="section-heading">
+                    <div class="eyebrow">CAREER PROGRESSION</div>
                     <h2>Professional Experience</h2>
-
-                    <p>
-                        Roles across recruitment, technology,
-                        service delivery and business operations.
+                    <p class="section-text">
+                        A chronological account of responsibilities
+                        across different professional environments.
                     </p>
                 </div>
 
-                <div class="career-timeline">
+                <div class="timeline">
 
-                    <!-- KAUSHAL -->
+                    <!-- KAUSHAL NAGPAL & COMPANY -->
 
-                    <article class="career-item">
-
-                        <span class="career-date">
-                            JULY 2024 – PRESENT
+                    <article class="timeline-item">
+                        <span class="timeline-date">
+                            July 2024 – Present
                         </span>
 
                         <h3>Business Project Advisor</h3>
 
-                        <p class="career-company">
+                        <div class="timeline-company">
                             Kaushal Nagpal &amp; Company
                             — Chartered Accountants | NCR
-                        </p>
-
-                        <p class="career-description">
-                            Supported business operations through
-                            digital documentation, internal
-                            coordination, market research and
-                            administrative process support.
-                        </p>
-
-                        <div class="career-tags">
-                            <span>Business Operations</span>
-                            <span>Digital Transformation</span>
-                            <span>Process Coordination</span>
-                            <span>Market Research</span>
                         </div>
 
+                        <p>
+                            Supporting business operations through
+                            digital documentation, internal
+                            coordination, localized market research
+                            and administrative processes, including
+                            the transition towards cloud-based
+                            record management.
+                        </p>
+
+                        <div class="tag-list">
+                            <span class="tag">Business Operations</span>
+                            <span class="tag">Digital Transformation</span>
+                            <span class="tag">Operational Coordination</span>
+                            <span class="tag">Market Research</span>
+                            <span class="tag">Process Documentation</span>
+                        </div>
                     </article>
 
                     <!-- HATCH -->
 
-                    <article class="career-item">
-
-                        <span class="career-date">
-                            JULY 2022 – MARCH 2024
+                    <article class="timeline-item">
+                        <span class="timeline-date">
+                            July 2022 – March 2024
                         </span>
 
                         <h3>Service Desk Technician</h3>
 
-                        <p class="career-company">
+                        <div class="timeline-company">
                             Hatch Ltd. | Gurgaon, NCR
-                        </p>
-
-                        <p class="career-description">
-                            Supported enterprise IT service delivery,
-                            user lifecycle management, access
-                            governance, service documentation
-                            and cross-functional coordination.
-                        </p>
-
-                        <div class="career-tags">
-                            <span>Incident Management</span>
-                            <span>User Lifecycle</span>
-                            <span>Access Management</span>
-                            <span>Service Documentation</span>
-                            <span>Operational Coordination</span>
                         </div>
 
+                        <p>
+                            Supported enterprise workplace operations
+                            in a hybrid Microsoft environment, covering
+                            user onboarding, mailbox provisioning,
+                            identity and access administration,
+                            incident documentation and process
+                            compliance. Collaborated with technical
+                            teams on complex incidents and root
+                            cause analysis.
+                        </p>
+
+                        <div class="tag-list">
+                            <span class="tag">Incident Management</span>
+                            <span class="tag">User Lifecycle</span>
+                            <span class="tag">Microsoft 365</span>
+                            <span class="tag">Microsoft Entra ID</span>
+                            <span class="tag">Active Directory</span>
+                            <span class="tag">SAP</span>
+                            <span class="tag">Process Compliance</span>
+                            <span class="tag">Root Cause Analysis</span>
+                        </div>
                     </article>
 
                     <!-- CONCENTRIX -->
 
-                    <article class="career-item">
-
-                        <span class="career-date">
-                            SEPTEMBER 2014 – MARCH 2022
+                    <article class="timeline-item">
+                        <span class="timeline-date">
+                            September 2014 – March 2022
                         </span>
 
                         <h3>Senior Representative — Operations</h3>
 
-                        <p class="career-company">
+                        <div class="timeline-company">
                             Concentrix India | Bengaluru
-                        </p>
-
-                        <p class="career-description">
-                            Managed customer escalations, case
-                            ownership, service quality, SLA adherence
-                            and cross-functional resolution across
-                            customer support operations.
-                        </p>
-
-                        <div class="career-tags">
-                            <span>Escalation Management</span>
-                            <span>Case Ownership</span>
-                            <span>SLA Adherence</span>
-                            <span>Customer Experience</span>
-                            <span>Service Quality</span>
                         </div>
 
+                        <p>
+                            Delivered advanced customer support,
+                            managed next-level escalations and
+                            maintained case ownership through
+                            resolution. Coordinated functional
+                            escalations, documented interactions
+                            in CRM and maintained customer
+                            communication in line with SLA,
+                            quality and performance requirements.
+                        </p>
+
+                        <div class="tag-list">
+                            <span class="tag">Escalation Management</span>
+                            <span class="tag">Case Ownership</span>
+                            <span class="tag">Incident Triage</span>
+                            <span class="tag">Resolver Coordination</span>
+                            <span class="tag">CRM Documentation</span>
+                            <span class="tag">SLA &amp; QA</span>
+                            <span class="tag">CSAT &amp; KPI</span>
+                            <span class="tag">Service Improvement</span>
+                        </div>
                     </article>
 
                     <!-- CITYLAND -->
 
-                    <article class="career-item">
-
-                        <span class="career-date">
-                            OCTOBER 2011 – FEBRUARY 2014
+                    <article class="timeline-item">
+                        <span class="timeline-date">
+                            October 2011 – February 2014
                         </span>
 
                         <h3>Technical Support</h3>
 
-                        <p class="career-company">
+                        <div class="timeline-company">
                             Cityland | Bengaluru
-                        </p>
-
-                        <p class="career-description">
-                            Supported technical operations through
-                            system troubleshooting, service
-                            coordination, maintenance activities
-                            and customer-facing technology support.
-                        </p>
-
-                        <div class="career-tags">
-                            <span>Technical Operations</span>
-                            <span>System Troubleshooting</span>
-                            <span>Service Coordination</span>
-                            <span>Technical Support</span>
                         </div>
 
+                        <p>
+                            Supported technology and digital-property
+                            operations, including customer enquiries,
+                            IP addressing, TCP/IP environments,
+                            system monitoring and maintenance.
+                            Coordinated third-party technical support
+                            and participated in system builds,
+                            upgrades, migrations and backups.
+                        </p>
+
+                        <div class="tag-list">
+                            <span class="tag">Technical Operations</span>
+                            <span class="tag">System Monitoring</span>
+                            <span class="tag">IP Addressing</span>
+                            <span class="tag">TCP/IP</span>
+                            <span class="tag">Third-party Coordination</span>
+                            <span class="tag">System Maintenance</span>
+                        </div>
                     </article>
 
                     <!-- IBM -->
 
-                    <article class="career-item">
-
-                        <span class="career-date">
-                            OCTOBER 2010 – SEPTEMBER 2011
+                    <article class="timeline-item">
+                        <span class="timeline-date">
+                            October 2010 – September 2011
                         </span>
 
                         <h3>L2 Technical Support</h3>
 
-                        <p class="career-company">
+                        <div class="timeline-company">
                             IBM | Bengaluru
-                        </p>
-
-                        <p class="career-description">
-                            Delivered enterprise IT support through
-                            incident resolution, remote troubleshooting,
-                            knowledge documentation and structured
-                            service support.
-                        </p>
-
-                        <div class="career-tags">
-                            <span>Enterprise IT Support</span>
-                            <span>L2 Support</span>
-                            <span>Incident Resolution</span>
-                            <span>Remote Troubleshooting</span>
-                            <span>Knowledge Management</span>
                         </div>
 
+                        <p>
+                            Provided global remote IT support for
+                            enterprise users, taking ownership of
+                            incidents from diagnosis through
+                            resolution. Supported SAP, Unix and
+                            RSA SecurID environments, contributed
+                            to knowledge documentation and assisted
+                            with enterprise technology rollouts.
+                        </p>
+
+                        <div class="tag-list">
+                            <span class="tag">L2 Support</span>
+                            <span class="tag">Incident Ownership</span>
+                            <span class="tag">Remote Support</span>
+                            <span class="tag">IBM Tivoli</span>
+                            <span class="tag">SAP &amp; Unix</span>
+                            <span class="tag">RSA SecurID</span>
+                            <span class="tag">Knowledge Management</span>
+                            <span class="tag">Patch Rollouts</span>
+                        </div>
                     </article>
 
-                    <!-- DEFENDER -->
+                    <!-- DEFENDER CORPORATION -->
 
-                    <article class="career-item">
-
-                        <span class="career-date">
-                            MARCH 2010 – SEPTEMBER 2010
+                    <article class="timeline-item">
+                        <span class="timeline-date">
+                            March 2010 – September 2010
                         </span>
 
                         <h3>Senior Systems Engineer</h3>
 
-                        <p class="career-company">
+                        <div class="timeline-company">
                             Defender Corporation | Bengaluru
-                        </p>
-
-                        <p class="career-description">
-                            Supported technical deployments,
-                            installation coordination, client
-                            support, remote troubleshooting and
-                            on-site service activities.
-                        </p>
-
-                        <div class="career-tags">
-                            <span>Technical Coordination</span>
-                            <span>Deployment Support</span>
-                            <span>Installation Support</span>
-                            <span>Client Support</span>
                         </div>
 
+                        <p>
+                            Coordinated technicians and on-site
+                            installation activities, managed
+                            installation schedules and priority
+                            client-site visits, and supported
+                            troubleshooting through telephone,
+                            remote assistance and on-site
+                            technical integration.
+                        </p>
+
+                        <div class="tag-list">
+                            <span class="tag">Technical Coordination</span>
+                            <span class="tag">Installation Scheduling</span>
+                            <span class="tag">Site Support</span>
+                            <span class="tag">Remote Troubleshooting</span>
+                            <span class="tag">Technical Integration</span>
+                        </div>
                     </article>
 
-                    <!-- SEKURENEXT -->
+                    <!-- SEKURENEXT INDIA -->
 
-                    <article class="career-item">
-
-                        <span class="career-date">
-                            MARCH 2009 – MARCH 2010
+                    <article class="timeline-item">
+                        <span class="timeline-date">
+                            March 2009 – March 2010
                         </span>
 
                         <h3>Senior Systems Engineer</h3>
 
-                        <p class="career-company">
+                        <div class="timeline-company">
                             Sekurenext India | Bengaluru
-                        </p>
-
-                        <p class="career-description">
-                            Supported software deployments,
-                            installation coordination, application
-                            troubleshooting and day-to-day
-                            technical operations.
-                        </p>
-
-                        <div class="career-tags">
-                            <span>Deployment Support</span>
-                            <span>Application Support</span>
-                            <span>Installation Coordination</span>
-                            <span>Technical Operations</span>
                         </div>
 
+                        <p>
+                            Assisted in the on-site deployment of
+                            business software and IT systems.
+                            Supported installation activities and
+                            maintained a standardized software
+                            deployment toolkit for technicians.
+                        </p>
+
+                        <div class="tag-list">
+                            <span class="tag">Software Deployment</span>
+                            <span class="tag">IT Systems</span>
+                            <span class="tag">Installation Support</span>
+                            <span class="tag">Deployment Toolkit</span>
+                            <span class="tag">On-site Support</span>
+                        </div>
                     </article>
 
-                    <!-- A-TEAM -->
+                    <!-- A-TEAM CONSULTING -->
 
-                    <article class="career-item">
-
-                        <span class="career-date">
-                            JANUARY 2003 – FEBRUARY 2009
+                    <article class="timeline-item">
+                        <span class="timeline-date">
+                            January 2003 – February 2009
                         </span>
 
                         <h3>Recruitment Associate — HR</h3>
 
-                        <p class="career-company">
+                        <div class="timeline-company">
                             A-Team Consulting | New Delhi
-                        </p>
-
-                        <p class="career-description">
-                            Supported recruitment activities through
-                            candidate sourcing, preliminary screening,
-                            interview coordination, recruitment
-                            documentation and client communication.
-                        </p>
-
-                        <div class="career-tags">
-                            <span>Talent Acquisition</span>
-                            <span>Recruitment Operations</span>
-                            <span>Candidate Screening</span>
-                            <span>Interview Coordination</span>
-                            <span>Client Coordination</span>
                         </div>
 
+                        <p>
+                            Supported recruitment operations across
+                            client accounts, including candidate
+                            sourcing, preliminary screening,
+                            interview coordination and recruitment
+                            MIS. Also contributed to recruitment
+                            drives, interview logistics, client
+                            communication and employee lifecycle
+                            support for temporary staff.
+                        </p>
+
+                        <div class="tag-list">
+                            <span class="tag">Talent Acquisition</span>
+                            <span class="tag">Candidate Sourcing</span>
+                            <span class="tag">Recruitment Operations</span>
+                            <span class="tag">Interview Coordination</span>
+                            <span class="tag">Recruitment MIS</span>
+                            <span class="tag">Client Coordination</span>
+                            <span class="tag">Employee Lifecycle</span>
+                        </div>
                     </article>
 
                 </div>
             </div>
         </section>
 
-        <!-- FUNCTIONAL CAPABILITIES -->
+        <!-- FUNCTIONAL EXPERTISE -->
 
-        <section class="experience-section">
-            <div class="experience-container">
+        <section>
+            <div class="container">
 
-                <div class="experience-heading">
-                    <span class="eyebrow">
-                        PROFESSIONAL CAPABILITIES
-                    </span>
-
-                    <h2>Functional Expertise</h2>
-
-                    <p>
-                        Capabilities developed through exposure
-                        to different professional environments.
+                <div class="section-heading">
+                    <div class="eyebrow">FUNCTIONAL EXPERTISE</div>
+                    <h2>Capabilities Across Professional Roles</h2>
+                    <p class="section-text">
+                        Transferable capabilities developed through
+                        experience in different business environments.
                     </p>
                 </div>
 
-                <div class="capability-grid">
+                <div class="expertise-grid">
 
-                    <article class="capability-card">
-                        <h3>Service Operations &amp; Delivery</h3>
-
+                    <article class="expertise-card">
+                        <h3>Service Delivery &amp; ITSM</h3>
                         <p>
-                            Incident ownership, escalation handling,
-                            service quality, operational continuity,
-                            SLA adherence and structured service delivery.
+                            Incident ownership, escalation
+                            management, service documentation,
+                            SLA adherence, knowledge management
+                            and operational continuity.
                         </p>
                     </article>
 
-                    <article class="capability-card">
-                        <h3>Business &amp; Process Coordination</h3>
-
+                    <article class="expertise-card">
+                        <h3>Business &amp; Process Operations</h3>
                         <p>
-                            Business support, process documentation,
-                            workflow coordination, operational tracking
-                            and research-based administrative support.
+                            Operational coordination, digital
+                            documentation, administrative support,
+                            process execution and market research.
                         </p>
                     </article>
 
-                    <article class="capability-card">
-                        <h3>Stakeholder &amp; Customer Engagement</h3>
-
+                    <article class="expertise-card">
+                        <h3>Stakeholder Engagement</h3>
                         <p>
-                            Customer communication, case follow-up,
-                            client coordination, functional escalation
-                            and cross-functional collaboration.
+                            Customer communication, client
+                            coordination, functional escalations,
+                            follow-up management and
+                            cross-functional collaboration.
                         </p>
                     </article>
 
-                    <article class="capability-card">
+                    <article class="expertise-card">
                         <h3>Recruitment &amp; People Operations</h3>
-
                         <p>
-                            Candidate sourcing, preliminary screening,
-                            interview coordination, recruitment
-                            documentation and recruitment support.
+                            Candidate engagement, recruitment
+                            coordination, interview logistics,
+                            hiring documentation, recruitment MIS
+                            and employee lifecycle support.
                         </p>
                     </article>
 
@@ -769,81 +936,87 @@
             </div>
         </section>
 
-        <!-- PEOPLE AND ORGANISATIONS -->
+        <!-- PEOPLE & ORGANISATIONS -->
 
-        <section class="experience-section alt">
-            <div class="experience-container">
+        <section class="perspective-section">
+            <div class="container">
 
-                <div class="people-perspective">
-
-                    <span class="eyebrow">
+                <div class="perspective-card">
+                    <div class="eyebrow">
                         PEOPLE &amp; ORGANISATIONS
-                    </span>
+                    </div>
 
                     <h2>
-                        Connecting Operational Experience
+                        Connecting Professional Experience
                         with HR Learning
                     </h2>
 
                     <p>
-                        Academic learning in Human Resource Management
-                        has broadened my understanding of organisational
-                        behaviour, workplace interactions, people
-                        management and employee experience. This
-                        perspective complements my professional exposure
-                        to customer engagement, team collaboration
-                        and business operations.
+                        My MBA studies in Human Resource Management
+                        have broadened my understanding of
+                        organisational behaviour, workplace
+                        interactions, employee experience and
+                        people management. These academic
+                        perspectives complement my professional
+                        exposure to recruitment, customer
+                        engagement, service operations and
+                        business coordination.
                     </p>
-
                 </div>
+
             </div>
         </section>
 
-        <!-- CALL TO ACTION -->
+        <!-- CONNECT -->
 
-        <section class="experience-cta">
+        <section class="connect">
+            <div class="container">
 
-            <span class="eyebrow">
-                EXPLORE FURTHER
-            </span>
+                <div class="eyebrow">EXPLORE FURTHER</div>
 
-            <h2>Explore My Professional Journey</h2>
+                <h2>Continue Exploring My Journey</h2>
 
-            <p>
-                Discover my academic background, projects,
-                qualifications and professional interests.
-            </p>
+                <p>
+                    Explore my academic background, research
+                    interests and professional development.
+                </p>
 
-            <div class="experience-cta-buttons">
+                <div class="connect-buttons">
 
-                <a href="education.html" class="btn btn-primary">
-                    Education →
-                </a>
+                    <a class="button" href="education.html">
+                        Education →
+                    </a>
 
-                <a href="projects.html" class="btn btn-secondary">
-                    View Projects
-                </a>
+                    <a class="secondary-button" href="projects.html">
+                        View Projects
+                    </a>
 
-                <a href="resume.html" class="btn btn-outline">
-                    View Resume
-                </a>
+                    <a class="secondary-button" href="resume.html">
+                        View Resume
+                    </a>
 
+                </div>
             </div>
-
         </section>
 
     </main>
 
     <!-- FOOTER -->
 
-    <footer class="footer">
-        <p>© 2026 Aman Nagpal | Aman Showcase</p>
+    <footer>
+        <div class="container footer-content">
+            <span>
+                © 2026 Aman Nagpal | Aman Showcase
+            </span>
 
-        <a href="https://www.linkedin.com/in/aman-nagpal10/"
-           target="_blank"
-           rel="noopener noreferrer">
-            LinkedIn
-        </a>
+            <a
+                href="https://www.linkedin.com/in/aman-nagpal10/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                LinkedIn
+            </a>
+        </div>
     </footer>
 
 </body>
