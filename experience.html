@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Experience | Aman Nagpal</title>
+
+    <meta name="description"
+          content="Explore Aman Nagpal's professional experience
+          across recruitment, enterprise services, business
+          operations and human resource management.">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* EXPERIENCE PAGE */
+
+        :root {
+            --exp-bg: #0b1022;
+            --exp-section: #0f172d;
+            --exp-card: #121c34;
+            --exp-border: #293955;
+            --exp-text: #f1f5fb;
+            --exp-muted: #a8b6cb;
+            --exp-blue: #60a5fa;
+            --exp-violet: #818cf8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
+
+        body {
+            margin: 0;
+            background: var(--exp-bg);
+            color: var(--exp-text);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+        }
+
+        .exp-container {
+            width: min(1140px, 88%);
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+
+        .exp-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 15, 33, 0.97);
+            border-bottom: 1px solid var(--exp-border);
+            backdrop-filter: blur(12px);
+        }
+
+        .exp-nav {
+            min-height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .exp-logo {
+            color: var(--exp-text);
+            font-size: 17px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .exp-logo span {
+            color: var(--exp-blue);
+        }
+
+        .exp-links {
+            display: flex;
+            align-items: center;
+            gap: 23px;
+        }
+
+        .exp-links a {
+            color: var(--exp-muted);
+            font-size: 12px;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .exp-links a:hover,
+        .exp-links a.active {
+            color: var(--exp-blue);
+        }
+
+        /* COMMON SECTIONS */
+
+        .exp-section {
+            padding: 85px 0;
+        }
+
+        .exp-section.alt {
+            background: var(--exp-section);
+        }
+
+        .exp-eyebrow {
+            display: block;
+            margin-bottom: 12px;
+            color: var(--exp-blue);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .exp-heading {
+            margin: 0 0 12px;
+            font-size: clamp(27px, 4vw, 38px);
+            line-height: 1.25;
+            font-weight: 700;
+        }
+
+        .exp-gradient {
+            background: linear-gradient(
+                100deg,
+                var(--exp-blue),
+                var(--exp-violet)
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .exp-intro {
+            max-width: 780px;
+            color: var(--exp-muted);
+            font-size: 14px;
+        }
+
+        /* HERO */
+
+        .exp-hero {
+            min-height: 360px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            background:
+                radial-gradient(
+                    ellipse at 50% 0%,
+                    rgba(79, 70, 229, 0.15),
+                    transparent 65%
+                ),
+                var(--exp-bg);
+        }
+
+        .exp-hero-content {
+            max-width: 850px;
+            margin: auto;
+            padding: 60px 0;
+        }
+
+        .exp-hero h1 {
+            margin: 12px 0;
+            font-size: clamp(36px, 6vw, 57px);
+            line-height: 1.2;
+        }
+
+        .exp-hero p {
+            max-width: 740px;
+            margin: 18px auto 0;
+            color: var(--exp-muted);
+            font-size: 16px;
+        }
+
+        /* CAREER OVERVIEW */
+
+        .exp-overview {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 38px;
+        }
+
+        .exp-card {
+            padding: 25px;
+            background: var(--exp-card);
+            border: 1px solid var(--exp-border);
+            border-radius: 12px;
+            transition: transform 0.25s ease,
+                        border-color 0.25s ease;
+        }
+
+        .exp-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--exp-blue);
+        }
+
+        .exp-number {
+            display: block;
+            margin-bottom: 13px;
+            color: var(--exp-blue);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .exp-card h3 {
+            margin: 0 0 10px;
+            font-size: 17px;
+        }
+
+        .exp-card p {
+            margin: 0;
+            color: var(--exp-muted);
+            font-size: 13px;
+        }
+
+        /* CAREER TIMELINE */
+
+        .exp-timeline {
+            position: relative;
+            max-width: 930px;
+            margin: 42px auto 0;
+            padding-left: 29px;
+            border-left: 2px solid var(--exp-border);
+        }
+
+        .exp-entry {
+            position: relative;
+            margin-bottom: 28px;
+            padding: 25px;
+            background: var(--exp-card);
+            border: 1px solid var(--exp-border);
+            border-radius: 12px;
+        }
+
+        .exp-entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .exp-entry::before {
+            content: "";
+            position: absolute;
+            top: 30px;
+            left: -37px;
+            width: 13px;
+            height: 13px;
+            background: var(--exp-blue);
+            border: 3px solid var(--exp-section);
+            border-radius: 50%;
+        }
+
+        .exp-date {
+            color: var(--exp-blue);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .exp-entry h3 {
+            margin: 7px 0 2px;
+            font-size: 19px;
+        }
+
+        .exp-company {
+            margin-bottom: 12px;
+            color: var(--exp-muted);
+            font-size: 13px;
+        }
+
+        .exp-entry p {
+            margin: 0;
+            color: var(--exp-muted);
+            font-size: 13px;
+        }
+
+        .exp-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .exp-tag {
+            padding: 5px 11px;
+            background: rgba(96, 165, 250, 0.06);
+            border: 1px solid var(--exp-border);
+            border-radius: 30px;
+            color: #c5d4ea;
+            font-size: 11px;
+        }
+
+        /* EXPERIENCE THEMES */
+
+        .exp-themes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 35px;
+        }
+
+        .exp-theme {
+            padding: 27px;
+            background: var(--exp-card);
+            border: 1px solid var(--exp-border);
+            border-radius: 12px;
+        }
+
+        .exp-theme h3 {
+            margin: 0 0 10px;
+            font-size: 18px;
+        }
+
+        .exp-theme p {
+            margin: 0;
+            color: var(--exp-muted);
+            font-size: 13px;
+        }
+
+        /* PEOPLE AND BEHAVIOUR */
+
+        .exp-people {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            align-items: center;
+            margin-top: 35px;
+        }
+
+        .exp-people-copy p {
+            color: var(--exp-muted);
+            font-size: 14px;
+        }
+
+        .exp-people-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .exp-people-item {
+            padding: 16px 19px;
+            background: var(--exp-card);
+            border: 1px solid var(--exp-border);
+            border-radius: 10px;
+        }
+
+        .exp-people-item strong {
+            display: block;
+            margin-bottom: 3px;
+            color: var(--exp-text);
+            font-size: 14px;
+        }
+
+        .exp-people-item span {
+            color: var(--exp-muted);
+            font-size: 12px;
+        }
+
+        /* CTA */
+
+        .exp-cta {
+            padding: 75px 20px;
+            text-align: center;
+            background: linear-gradient(
+                110deg,
+                rgba(59, 130, 246, 0.10),
+                rgba(99, 102, 241, 0.13)
+            );
+            border-top: 1px solid var(--exp-border);
+        }
+
+        .exp-cta p {
+            color: var(--exp-muted);
+            font-size: 13px;
+        }
+
+        .exp-button {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 11px 22px;
+            border-radius: 6px;
+            background: linear-gradient(
+                100deg,
+                #3b82f6,
+                #6256e8
+            );
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .exp-button:hover {
+            opacity: 0.85;
+        }
+
+        /* FOOTER */
+
+        .exp-footer {
+            padding: 19px 0;
+            background: #080d1c;
+            border-top: 1px solid var(--exp-border);
+        }
+
+        .exp-footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            color: var(--exp-muted);
+            font-size: 11px;
+        }
+
+        .exp-footer a {
+            color: var(--exp-muted);
+            text-decoration: none;
+        }
+
+        .exp-footer a:hover {
+            color: var(--exp-blue);
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 800px) {
+            .exp-overview {
+                grid-template-columns: 1fr;
+            }
+
+            .exp-people {
+                grid-template-columns: 1fr;
+            }
+
+            .exp-links {
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .exp-container {
+                width: 90%;
+            }
+
+            .exp-nav {
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 13px 0;
+                gap: 8px;
+            }
+
+            .exp-links {
+                width: 100%;
+                flex-wrap: wrap;
+                gap: 12px 17px;
+            }
+
+            .exp-links a {
+                font-size: 11px;
+            }
+
+            .exp-section {
+                padding: 60px 0;
+            }
+
+            .exp-hero {
+                min-height: 310px;
+            }
+
+            .exp-timeline {
+                padding-left: 22px;
+            }
+
+            .exp-entry {
+                padding: 20px;
+            }
+
+            .exp-entry::before {
+                left: -30px;
+            }
+
+            .exp-themes {
+                grid-template-columns: 1fr;
+            }
+
+            .exp-footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .exp-card,
+            .exp-button {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header class="exp-header">
+        <div class="exp-container exp-nav">
+
+            <a href="index.html" class="exp-logo">
+                AMAN<span>SHOWCASE</span>
+            </a>
+
+            <nav class="exp-links" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="experience.html" class="active"
+                   aria-current="page">Experience</a>
+                <a href="education.html">Education</a>
+                <a href="projects.html">Projects</a>
+                <a href="resume.html">Resume</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="exp-hero">
+        <div class="exp-container exp-hero-content">
+
+            <span class="exp-eyebrow">
+                PROFESSIONAL EXPERIENCE
+            </span>
+
+            <h1>
+                A Journey Across<br>
+                <span class="exp-gradient">
+                    People, Processes & Business
+                </span>
+            </h1>
+
+            <p>
+                Exploring how professional experience across
+                recruitment, enterprise services and business
+                operations has shaped my understanding of
+                people, processes and organisational management.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- PROFESSIONAL OVERVIEW -->
+
+    <section class="exp-section alt">
+        <div class="exp-container">
+
+            <span class="exp-eyebrow">
+                PROFESSIONAL OVERVIEW
+            </span>
+
+            <h2 class="exp-heading">
+                Experience Across <span class="exp-gradient">
+                    Functions
+                </span>
+            </h2>
+
+            <p class="exp-intro">
+                My professional journey has involved different
+                responsibilities, working environments and
+                operational challenges. Together, they have
+                contributed to a broader understanding of
+                organisational processes and business operations.
+            </p>
+
+            <div class="exp-overview">
+
+                <article class="exp-card">
+                    <span class="exp-number">01</span>
+                    <h3>Recruitment & People</h3>
+                    <p>
+                        Recruitment operations, candidate sourcing,
+                        interview coordination, client communication
+                        and people-related processes.
+                    </p>
+                </article>
+
+                <article class="exp-card">
+                    <span class="exp-number">02</span>
+                    <h3>Enterprise & Service Operations</h3>
+                    <p>
+                        Technical support, incident resolution,
+                        service delivery, access management and
+                        operational coordination.
+                    </p>
+                </article>
+
+                <article class="exp-card">
+                    <span class="exp-number">03</span>
+                    <h3>Business & Management</h3>
+                    <p>
+                        Business operations, digital transformation,
+                        process improvement, market research and
+                        management-oriented learning.
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CAREER TIMELINE -->
+
+    <section class="exp-section">
+        <div class="exp-container">
+
+            <span class="exp-eyebrow">
+                CAREER TIMELINE
+            </span>
+
+            <h2 class="exp-heading">
+                Professional <span class="exp-gradient">
+                    Journey
+                </span>
+            </h2>
+
+            <p class="exp-intro">
+                A chronological overview of my professional
+                experience across different organisations
+                and functional areas.
+            </p>
+
+            <div class="exp-timeline">
+
+                <!-- KAUSHAL -->
+
+                <article class="exp-entry">
+                    <span class="exp-date">
+                        July 2024 – Present
+                    </span>
+
+                    <h3>Business Project Advisor</h3>
+
+                    <div class="exp-company">
+                        Kaushal & Company — Chartered Accountants
+                        | NCR
+                    </div>
+
+                    <p>
+                        Supporting business operations, digital
+                        documentation, operational coordination,
+                        market research and administrative processes.
+                        This experience has broadened my exposure
+                        to business management and organisational
+                        activities.
+                    </p>
+
+                    <div class="exp-tags">
+                        <span class="exp-tag">Business Operations</span>
+                        <span class="exp-tag">Digital Transformation</span>
+                        <span class="exp-tag">Process Improvement</span>
+                        <span class="exp-tag">Research</span>
+                    </div>
+                </article>
+
+
+                <!-- HATCH -->
+
+                <article class="exp-entry">
+                    <span class="exp-date">
+                        July 2022 – March 2024
+                    </span>
+
+                    <h3>Service Desk Technician</h3>
+
+                    <div class="exp-company">
+                        Hatch Ltd. | Gurgaon, NCR
+                    </div>
+
+                    <p>
+                        Supported enterprise workplace operations,
+                        user lifecycle activities, access management,
+                        documentation and cross-functional
+                        coordination in a structured service
+                        environment.
+                    </p>
+
+                    <div class="exp-tags">
+                        <span class="exp-tag">Enterprise Support</span>
+                        <span class="exp-tag">Incident Management</span>
+                        <span class="exp-tag">Access Management</span>
+                        <span class="exp-tag">Service Delivery</span>
+                    </div>
+                </article>
+
+
+                <!-- CONCENTRIX -->
+
+                <article class="exp-entry">
+                    <span class="exp-date">
+                        September 2014 – March 2022
+                    </span>
+
+                    <h3>Senior Representative – Operations</h3>
+
+                    <div class="exp-company">
+                        Concentrix India | Bengaluru
+                    </div>
+
+                    <p>
+                        Worked in customer support operations,
+                        handling escalations, service quality,
+                        documentation and stakeholder communication
+                        in an SLA-driven environment. The role
+                        involved operational coordination and
+                        attention to service standards.
+                    </p>
+
+                    <div class="exp-tags">
+                        <span class="exp-tag">Operations</span>
+                        <span class="exp-tag">Escalation Management</span>
+                        <span class="exp-tag">Service Quality</span>
+                        <span class="exp-tag">Stakeholder Communication</span>
+                    </div>
+                </article>
+
+
+                <!-- CITYLAND -->
+
+                <article class="exp-entry">
+                    <span class="exp-date">
+                        October 2011 – February 2014
+                    </span>
+
+                    <h3>Technical Support</h3>
+
+                    <div class="exp-company">
+                        Cityland | Bengaluru
+                    </div>
+
+                    <p>
+                        Supported technical operations, customer
+                        enquiries, service coordination and
+                        day-to-day operational activities.
+                    </p>
+
+                    <div class="exp-tags">
+                        <span class="exp-tag">Technical Support</span>
+                        <span class="exp-tag">Customer Service</span>
+                        <span class="exp-tag">Coordination</span>
+                    </div>
+                </article>
+
+
+                <!-- IBM -->
+
+                <article class="exp-entry">
+                    <span class="exp-date">
+                        October 2010 – September 2011
+                    </span>
+
+                    <h3>L2 Technical Support</h3>
+
+                    <div class="exp-company">
+                        IBM | Bengaluru
+                    </div>
+
+                    <p>
+                        Provided enterprise remote support,
+                        incident resolution and knowledge
+                        documentation for global users.
+                    </p>
+
+                    <div class="exp-tags">
+                        <span class="exp-tag">L2 Support</span>
+                        <span class="exp-tag">Incident Resolution</span>
+                        <span class="exp-tag">Knowledge Management</span>
+                    </div>
+                </article>
+
+
+                <!-- DEFENDER -->
+
+                <article class="exp-entry">
+                    <span class="exp-date">
+                        March 2010 – September 2010
+                    </span>
+
+                    <h3>Senior Systems Engineer</h3>
+
+                    <div class="exp-company">
+                        Defender Corporation
+                    </div>
+
+                    <p>
+                        Developed experience in technical
+                        operations and systems-related support
+                        within a professional service environment.
+                    </p>
+
+                    <div class="exp-tags">
+                        <span class="exp-tag">Systems Support</span>
+                        <span class="exp-tag">Technical Operations</span>
+                    </div>
+                </article>
+
+
+                <!-- SEKURENEXT -->
+
+                <article class="exp-entry">
+                    <span class="exp-date">
+                        March 2009 – March 2010
+                    </span>
+
+                    <h3>Senior Systems Engineer</h3>
+
+                    <div class="exp-company">
+                        Sekurenext India
+                    </div>
+
+                    <p>
+                        Gained experience in technical deployment,
+                        systems support and customer-oriented
+                        technical operations.
+                    </p>
+
+                    <div class="exp-tags">
+                        <span class="exp-tag">Technical Operations</span>
+                        <span class="exp-tag">Systems Support</span>
+                    </div>
+                </article>
+
+
+                <!-- A-TEAM -->
+
+                <article class="exp-entry">
+                    <span class="exp-date">
+                        January 2003 – February 2009
+                    </span>
+
+                    <h3>Recruitment Associate</h3>
+
+                    <div class="exp-company">
+                        A-Team Consulting
+                    </div>
+
+                    <p>
+                        Worked in recruitment operations, candidate
+                        sourcing, preliminary screening, interview
+                        coordination, recruitment MIS and client
+                        communication. This role provided an early
+                        foundation in recruitment processes and
+                        people-oriented work.
+                    </p>
+
+                    <div class="exp-tags">
+                        <span class="exp-tag">Recruitment</span>
+                        <span class="exp-tag">Candidate Sourcing</span>
+                        <span class="exp-tag">Interview Coordination</span>
+                        <span class="exp-tag">Recruitment MIS</span>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- EXPERIENCE ACROSS FUNCTIONS -->
+
+    <section class="exp-section alt">
+        <div class="exp-container">
+
+            <span class="exp-eyebrow">
+                PROFESSIONAL CAPABILITIES
+            </span>
+
+            <h2 class="exp-heading">
+                Experience Across <span class="exp-gradient">
+                    Functions
+                </span>
+            </h2>
+
+            <p class="exp-intro">
+                Different professional environments have
+                contributed to my understanding of how
+                organisations function.
+            </p>
+
+            <div class="exp-themes">
+
+                <article class="exp-theme">
+                    <h3>People & Recruitment</h3>
+                    <p>
+                        Recruitment coordination, candidate
+                        interactions, communication and an
+                        understanding of people-related processes.
+                    </p>
+                </article>
+
+                <article class="exp-theme">
+                    <h3>Service & Operations</h3>
+                    <p>
+                        Incident resolution, service delivery,
+                        escalation handling, process compliance
+                        and operational coordination.
+                    </p>
+                </article>
+
+                <article class="exp-theme">
+                    <h3>Business Processes</h3>
+                    <p>
+                        Business support, digital documentation,
+                        process improvement and coordination
+                        across operational activities.
+                    </p>
+                </article>
+
+                <article class="exp-theme">
+                    <h3>Management Perspective</h3>
+                    <p>
+                        Applying business understanding, analytical
+                        thinking and management concepts to
+                        organisational situations.
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PEOPLE AND BEHAVIOUR -->
+
+    <section class="exp-section">
+        <div class="exp-container">
+
+            <span class="exp-eyebrow">
+                PEOPLE & ORGANISATIONS
+            </span>
+
+            <h2 class="exp-heading">
+                Understanding the <span class="exp-gradient">
+                    Human Element
+                </span>
+            </h2>
+
+            <div class="exp-people">
+
+                <div class="exp-people-copy">
+
+                    <p>
+                        Professional experience has given me
+                        exposure to different working environments,
+                        service expectations and stakeholder
+                        interactions.
+                    </p>
+
+                    <p>
+                        My MBA in Human Resource Management
+                        has added an academic perspective to
+                        understanding people, organisational
+                        behaviour and management.
+                    </p>
+
+                    <p>
+                        Together, these experiences have
+                        strengthened my interest in the
+                        relationship between people, processes
+                        and organisational effectiveness.
+                    </p>
+
+                </div>
+
+                <div class="exp-people-list">
+
+                    <div class="exp-people-item">
+                        <strong>Human Interaction</strong>
+                        <span>
+                            Communication, professional relationships
+                            and stakeholder engagement.
+                        </span>
+                    </div>
+
+                    <div class="exp-people-item">
+                        <strong>Organisational Behaviour</strong>
+                        <span>
+                            Understanding workplace behaviour,
+                            motivation and organisational dynamics.
+                        </span>
+                    </div>
+
+                    <div class="exp-people-item">
+                        <strong>People Management</strong>
+                        <span>
+                            Exploring people management,
+                            employee experience and HR practices.
+                        </span>
+                    </div>
+
+                    <div class="exp-people-item">
+                        <strong>Continuous Learning</strong>
+                        <span>
+                            Connecting professional experience
+                            with management concepts and
+                            ongoing academic learning.
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CLOSING SECTION -->
+
+    <section class="exp-cta">
+        <div class="exp-container">
+
+            <span class="exp-eyebrow">
+                BEYOND EXPERIENCE
+            </span>
+
+            <h2 class="exp-heading">
+                Learning, Evolving & <span class="exp-gradient">
+                    Moving Forward
+                </span>
+            </h2>
+
+            <p>
+                Explore my academic background, research
+                interests and professional work.
+            </p>
+
+            <a href="education.html" class="exp-button">
+                Explore Education →
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="exp-footer">
+        <div class="exp-container exp-footer-inner">
+
+            <span>
+                © 2026 Aman Nagpal | Aman Showcase
+            </span>
+
+            <a href="https://www.linkedin.com/in/aman-nagpal10/"
+               target="_blank"
+               rel="noopener noreferrer">
+                LinkedIn
+            </a>
+
+        </div>
+    </footer>
+
+</body>
+</html>
