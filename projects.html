@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Aman Nagpal's projects and research portfolio,
+          featuring research on AI integration, employee learning,
+          technostress and organisational performance.">
+
+    <title>Projects & Research | Aman Nagpal</title>
+
+    <style>
+        /* =========================================
+           AMAN SHOWCASE — PROJECTS
+           ========================================= */
+
+        :root {
+            --background: #0b1020;
+            --section: #10182d;
+            --card: #121d34;
+            --card-light: #17233a;
+            --text: #f3f6fc;
+            --muted: #aab6ca;
+            --blue: #60a5fa;
+            --purple: #a78bfa;
+            --border: rgba(255, 255, 255, 0.12);
+        }
+
+        /* GLOBAL */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1136px, 90%);
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+
+        header {
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 16, 32, 0.97);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(14px);
+        }
+
+        .navbar {
+            min-height: 58px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 17px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--blue);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 23px;
+        }
+
+        .nav-links a {
+            font-size: 12px;
+            color: var(--muted);
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--blue);
+        }
+
+        /* COMMON TYPOGRAPHY */
+
+        .eyebrow {
+            display: inline-block;
+            color: var(--blue);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+            margin-bottom: 13px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(
+                90deg,
+                var(--blue),
+                var(--purple)
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .section-heading {
+            margin-bottom: 32px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(25px, 3vw, 32px);
+            line-height: 1.35;
+            margin-bottom: 10px;
+        }
+
+        .section-text {
+            color: var(--muted);
+            font-size: 13px;
+            max-width: 750px;
+        }
+
+        /* PAGE INTRODUCTION */
+
+        .page-intro {
+            padding: 82px 0 75px;
+            text-align: center;
+            background:
+                radial-gradient(
+                    ellipse at 50% 20%,
+                    rgba(96, 165, 250, 0.10),
+                    transparent 55%
+                ),
+                var(--background);
+        }
+
+        .page-intro h1 {
+            font-size: clamp(34px, 4.5vw, 49px);
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin-bottom: 17px;
+        }
+
+        .intro-text {
+            max-width: 720px;
+            margin: auto;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* FEATURED PROJECT */
+
+        .featured-section {
+            padding: 65px 0 75px;
+        }
+
+        .featured-card {
+            display: grid;
+            grid-template-columns: 1.5fr 0.9fr;
+            gap: 30px;
+            align-items: stretch;
+            padding: 34px;
+            background:
+                linear-gradient(
+                    120deg,
+                    rgba(96, 165, 250, 0.07),
+                    transparent 55%
+                ),
+                var(--card);
+            border: 1px solid rgba(96, 165, 250, 0.32);
+            border-radius: 13px;
+        }
+
+        .project-label {
+            display: inline-block;
+            color: var(--blue);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-bottom: 13px;
+        }
+
+        .featured-content h2 {
+            font-size: clamp(21px, 2.5vw, 27px);
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .featured-content > p {
+            color: var(--muted);
+            font-size: 13px;
+            margin-bottom: 17px;
+        }
+
+        .research-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 22px;
+        }
+
+        .research-tags span {
+            padding: 5px 10px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.035);
+            color: #d4deee;
+            font-size: 11px;
+        }
+
+        /* RESEARCH FOCUS PANEL */
+
+        .research-panel {
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid var(--border);
+            border-radius: 11px;
+        }
+
+        .research-panel h3 {
+            color: var(--blue);
+            font-size: 12px;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .focus-list {
+            list-style: none;
+        }
+
+        .focus-list li {
+            padding: 9px 0;
+            color: #d4deee;
+            font-size: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .focus-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* RESEARCH THEMES */
+
+        .themes-section {
+            padding: 75px 0;
+            background: var(--section);
+        }
+
+        .themes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .theme-card {
+            padding: 25px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 11px;
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .theme-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--blue);
+        }
+
+        .theme-number {
+            display: block;
+            color: var(--blue);
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 13px;
+        }
+
+        .theme-card h3 {
+            font-size: 16px;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .theme-card p {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        /* RESEARCH PERSPECTIVE */
+
+        .perspective-section {
+            padding: 75px 0;
+        }
+
+        .perspective-card {
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--blue);
+            border-radius: 10px;
+            background: var(--card);
+        }
+
+        .perspective-card h2 {
+            font-size: 23px;
+            line-height: 1.4;
+            margin-bottom: 13px;
+        }
+
+        .perspective-card p {
+            max-width: 900px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* CLOSING SECTION */
+
+        .connect {
+            padding: 70px 0;
+            text-align: center;
+            background: var(--section);
+            border-top: 1px solid var(--border);
+        }
+
+        .connect h2 {
+            font-size: clamp(23px, 3vw, 30px);
+            margin-bottom: 12px;
+        }
+
+        .connect p {
+            max-width: 600px;
+            margin: 0 auto 23px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .connect-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 19px;
+            border: 1px solid transparent;
+            border-radius: 7px;
+            background: linear-gradient(
+                100deg,
+                #3b82f6,
+                #6366f1
+            );
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            transition: transform 0.25s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+        }
+
+        .secondary-button {
+            display: inline-block;
+            padding: 10px 19px;
+            border: 1px solid var(--border);
+            border-radius: 7px;
+            background: var(--card);
+            color: var(--text);
+            font-size: 12px;
+            font-weight: 600;
+            transition:
+                background 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .secondary-button:hover {
+            background: var(--card-light);
+            border-color: var(--blue);
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 23px 0;
+            border-top: 1px solid var(--border);
+            background: #080c19;
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-content a:hover {
+            color: var(--blue);
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 760px) {
+            .navbar {
+                flex-direction: column;
+                padding: 13px 0;
+            }
+
+            .nav-links {
+                gap: 14px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .page-intro {
+                padding: 65px 0 55px;
+            }
+
+            .featured-card {
+                grid-template-columns: 1fr;
+                padding: 25px;
+            }
+
+            .themes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-section,
+            .themes-section,
+            .perspective-section {
+                padding: 52px 0;
+            }
+
+            .connect {
+                padding: 55px 0;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .nav-links {
+                gap: 10px;
+                font-size: 11px;
+            }
+
+            .featured-card,
+            .perspective-card {
+                padding: 20px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header>
+        <div class="container navbar">
+
+            <a href="index.html" class="logo">
+                AMAN<span>SHOWCASE</span>
+            </a>
+
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="experience.html">Experience</a>
+                <a href="education.html">Education</a>
+                <a href="projects.html" class="active">Projects</a>
+                <a href="resume.html">Resume</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- PAGE INTRODUCTION -->
+
+        <section class="page-intro">
+            <div class="container">
+
+                <div class="eyebrow">
+                    PROJECTS &amp; RESEARCH
+                </div>
+
+                <h1>
+                    Research &amp;<br>
+                    <span class="gradient-text">
+                        Ideas in Practice
+                    </span>
+                </h1>
+
+                <p class="intro-text">
+                    Exploring the relationship between technology,
+                    employee learning and organisational performance
+                    through academic research and management
+                    perspectives.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- FEATURED RESEARCH -->
+
+        <section class="featured-section">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div class="eyebrow">FEATURED PROJECT</div>
+                    <h2>Academic Research</h2>
+                    <p class="section-text">
+                        A research project connecting artificial
+                        intelligence, human resource development
+                        and organisational performance.
+                    </p>
+                </div>
+
+                <article class="featured-card">
+
+                    <div class="featured-content">
+
+                        <div class="project-label">
+                            MBA RESEARCH
+                        </div>
+
+                        <h2>
+                            AI Integration, Employee Learning
+                            &amp; Organisational Performance
+                        </h2>
+
+                        <p>
+                            Research examining the impact of
+                            artificial intelligence integration
+                            on employee learning, technostress
+                            and organisational performance,
+                            with attention to training, learning
+                            support and employee development.
+                        </p>
+
+                        <div class="research-tags">
+                            <span>Human Resource Management</span>
+                            <span>AI Integration</span>
+                            <span>Employee Learning</span>
+                            <span>Technostress</span>
+                            <span>HRD Interventions</span>
+                        </div>
+
+                    </div>
+
+                    <aside class="research-panel">
+
+                        <h3>RESEARCH FOCUS</h3>
+
+                        <ul class="focus-list">
+                            <li>AI integration in organisations</li>
+                            <li>Employee learning and development</li>
+                            <li>Technostress</li>
+                            <li>Training and learning support</li>
+                            <li>Organisational performance</li>
+                        </ul>
+
+                    </aside>
+
+                </article>
+
+            </div>
+        </section>
+
+        <!-- KEY RESEARCH THEMES -->
+
+        <section class="themes-section">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div class="eyebrow">RESEARCH THEMES</div>
+                    <h2>Three Connected Perspectives</h2>
+                    <p class="section-text">
+                        The research brings together technology,
+                        employee development and organisational
+                        outcomes.
+                    </p>
+                </div>
+
+                <div class="themes-grid">
+
+                    <article class="theme-card">
+                        <span class="theme-number">01</span>
+
+                        <h3>Technology &amp; Work</h3>
+
+                        <p>
+                            AI integration and its implications
+                            for organisational processes,
+                            workplace practices and the
+                            employee experience.
+                        </p>
+                    </article>
+
+                    <article class="theme-card">
+                        <span class="theme-number">02</span>
+
+                        <h3>People &amp; Learning</h3>
+
+                        <p>
+                            Employee learning, training,
+                            development support and the
+                            challenges associated with
+                            technostress.
+                        </p>
+                    </article>
+
+                    <article class="theme-card">
+                        <span class="theme-number">03</span>
+
+                        <h3>Organisational Outcomes</h3>
+
+                        <p>
+                            The relationship between AI,
+                            employee development, HRD
+                            interventions and organisational
+                            performance.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- RESEARCH PERSPECTIVE -->
+
+        <section class="perspective-section">
+            <div class="container">
+
+                <div class="perspective-card">
+
+                    <div class="eyebrow">
+                        RESEARCH PERSPECTIVE
+                    </div>
+
+                    <h2>
+                        Connecting Technology with the Human
+                        Side of Organisations
+                    </h2>
+
+                    <p>
+                        AI integration is not solely a technology
+                        consideration. It also raises questions
+                        about employee learning, workplace
+                        adaptation and the support organisations
+                        provide. This research brings these
+                        dimensions together, examining the
+                        relevance of HRD interventions and
+                        employee development to organisational
+                        performance.
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CLOSING SECTION -->
+
+        <section class="connect">
+            <div class="container">
+
+                <div class="eyebrow">EXPLORE FURTHER</div>
+
+                <h2>
+                    From Academic Learning to Professional
+                    Perspective
+                </h2>
+
+                <p>
+                    Explore the academic foundation and
+                    professional experience that complement
+                    my research interests.
+                </p>
+
+                <div class="connect-buttons">
+
+                    <a class="button" href="education.html">
+                        Education →
+                    </a>
+
+                    <a class="secondary-button" href="experience.html">
+                        View Experience
+                    </a>
+
+                    <a class="secondary-button" href="contact.html">
+                        Get in Touch
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="container footer-content">
+
+            <span>
+                © 2026 Aman Nagpal | Aman Showcase
+            </span>
+
+            <a
+                href="https://www.linkedin.com/in/aman-nagpal10/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                LinkedIn
+            </a>
+
+        </div>
+    </footer>
+
+</body>
+</html>
