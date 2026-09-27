@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Aman Nagpal, his professional journey across HR, business operations, service delivery, and management.">
+    <meta name="author" content="Aman Nagpal">
+    <title>About Me | Aman Nagpal — Aman Showcase</title>
+
+    <style>
+        :root {
+            --bg: #0b1022;
+            --section: #10172b;
+            --card: #121b30;
+            --text: #f1f5f9;
+            --muted: #a8b5cb;
+            --blue: #60a5fa;
+            --purple: #818cf8;
+            --border: #29364e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1140px, 90%);
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 16, 34, 0.96);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .navbar {
+            min-height: 58px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--blue);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .nav-links a {
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--blue);
+        }
+
+        /* PAGE INTRODUCTION */
+
+        .page-intro {
+            padding: 95px 0 75px;
+            text-align: center;
+            background:
+                radial-gradient(
+                    ellipse at top,
+                    rgba(59, 130, 246, 0.12),
+                    transparent 65%
+                );
+        }
+
+        .eyebrow {
+            color: var(--blue);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: clamp(34px, 5vw, 52px);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(
+                90deg,
+                var(--blue),
+                var(--purple)
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .intro-text {
+            max-width: 720px;
+            margin: auto;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        /* GENERAL SECTIONS */
+
+        section {
+            padding: 70px 0;
+        }
+
+        .section-heading {
+            margin-bottom: 32px;
+        }
+
+        .section-heading .eyebrow {
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: clamp(25px, 4vw, 34px);
+            line-height: 1.3;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .section-text {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* MY STORY */
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 35px;
+            align-items: start;
+        }
+
+        .story-content p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 17px;
+        }
+
+        .story-card {
+            padding: 28px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            border-radius: 13px;
+        }
+
+        .story-card .initials {
+            width: 66px;
+            height: 66px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            margin-bottom: 18px;
+            font-size: 22px;
+            font-weight: 700;
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #7c3aed
+            );
+        }
+
+        .story-card p {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 10px;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            padding: 6px 12px;
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            color: #cbd5e1;
+            font-size: 11px;
+            background: rgba(255, 255, 255, 0.025);
+        }
+
+        /* PROFESSIONAL JOURNEY */
+
+        .journey-section {
+            background: var(--section);
+        }
+
+        .timeline {
+            max-width: 850px;
+            margin: auto;
+            border-left: 2px solid var(--border);
+            padding-left: 28px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding: 23px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 11px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -36px;
+            top: 28px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: var(--blue);
+            border: 3px solid var(--section);
+        }
+
+        .timeline-date {
+            display: inline-block;
+            margin-bottom: 7px;
+            color: var(--blue);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .timeline-item h3 {
+            margin-bottom: 4px;
+        }
+
+        .timeline-company {
+            color: #cbd5e1;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* PROFESSIONAL APPROACH */
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .approach-card {
+            padding: 25px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            border-radius: 12px;
+            transition: transform 0.2s ease,
+                        border-color 0.2s ease;
+        }
+
+        .approach-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--blue);
+        }
+
+        .approach-number {
+            color: var(--blue);
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+
+        .approach-card p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* EDUCATION AND RESEARCH */
+
+        .learning-section {
+            background: var(--section);
+        }
+
+        .learning-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .learning-card {
+            padding: 27px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .learning-card p {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 9px;
+        }
+
+        .learning-label {
+            color: var(--blue);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        /* INTERESTS */
+
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .interest {
+            padding: 11px 17px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--card);
+            color: #dbeafe;
+            font-size: 13px;
+        }
+
+        /* CONNECT */
+
+        .connect {
+            padding: 65px 0;
+            text-align: center;
+            background:
+                linear-gradient(
+                    120deg,
+                    rgba(37, 99, 235, 0.09),
+                    rgba(124, 58, 237, 0.09)
+                );
+        }
+
+        .connect p {
+            color: var(--muted);
+            font-size: 14px;
+            margin: 12px auto 24px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 11px 22px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            background: linear-gradient(
+                100deg,
+                #3b82f6,
+                #6366f1
+            );
+            color: white;
+            transition: opacity 0.2s ease;
+        }
+
+        .button:hover {
+            opacity: 0.85;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 23px 0;
+            border-top: 1px solid var(--border);
+            background: #080c19;
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-content a:hover {
+            color: var(--blue);
+        }
+
+        /* MOBILE RESPONSIVENESS */
+
+        @media (max-width: 760px) {
+            .navbar {
+                flex-direction: column;
+                padding: 13px 0;
+            }
+
+            .nav-links {
+                gap: 14px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .page-intro {
+                padding: 65px 0 55px;
+            }
+
+            .story-grid,
+            .learning-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .approach-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 52px 0;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .nav-links {
+                gap: 10px;
+                font-size: 11px;
+            }
+
+            .timeline {
+                padding-left: 22px;
+            }
+
+            .timeline-item {
+                padding: 17px;
+            }
+
+            .timeline-item::before {
+                left: -30px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                AMAN<span>SHOWCASE</span>
+            </a>
+
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html" class="active">About</a>
+                <a href="experience.html">Experience</a>
+                <a href="education.html">Education</a>
+                <a href="projects.html">Projects</a>
+                <a href="resume.html">Resume</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- PAGE INTRODUCTION -->
+
+        <section class="page-intro">
+            <div class="container">
+                <div class="eyebrow">ABOUT AMAN</div>
+
+                <h1>
+                    Beyond Roles,<br>
+                    <span class="gradient-text">
+                        A Professional Journey
+                    </span>
+                </h1>
+
+                <p class="intro-text">
+                    Exploring the intersection of people,
+                    business operations, technology and
+                    management through experience and
+                    continuous learning.
+                </p>
+            </div>
+        </section>
+
+        <!-- MY STORY -->
+
+        <section>
+            <div class="container">
+                <div class="section-heading">
+                    <div class="eyebrow">MY STORY</div>
+                    <h2>Connecting Experience with Perspective</h2>
+                </div>
+
+                <div class="story-grid">
+                    <div class="story-content">
+
+                        <p>
+                            My professional journey has evolved
+                            across recruitment, technical support,
+                            enterprise service delivery and
+                            business operations. Each stage has
+                            contributed to my understanding of
+                            how people, processes and technology
+                            work together in an organisation.
+                        </p>
+
+                        <p>
+                            I began my career in recruitment
+                            operations, gaining exposure to
+                            candidate sourcing, preliminary
+                            screening, interview coordination,
+                            recruitment documentation and
+                            client communication.
+                        </p>
+
+                        <p>
+                            My subsequent experience in
+                            enterprise support and service
+                            delivery strengthened my approach
+                            to problem-solving, process
+                            compliance, stakeholder communication
+                            and operational coordination.
+                        </p>
+
+                        <p>
+                            My more recent exposure to business
+                            operations and digital transformation,
+                            alongside my MBA studies in Human
+                            Resource Management, has broadened
+                            my perspective on management,
+                            organisational processes and
+                            strategic decision-making.
+                        </p>
+
+                    </div>
+
+                    <aside class="story-card">
+                        <div class="initials">AN</div>
+
+                        <h3>Aman Nagpal</h3>
+
+                        <p>
+                            HR & Operations Professional
+                        </p>
+
+                        <p>
+                            A professional profile shaped by
+                            experience, business understanding
+                            and continuous learning.
+                        </p>
+
+                        <div class="tag-list">
+                            <span class="tag">HR Operations</span>
+                            <span class="tag">Business</span>
+                            <span class="tag">Management</span>
+                            <span class="tag">Process Improvement</span>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROFESSIONAL JOURNEY -->
+
+        <section class="journey-section">
+            <div class="container">
+                <div class="section-heading">
+                    <div class="eyebrow">PROFESSIONAL JOURNEY</div>
+                    <h2>Experience Across Functions</h2>
+                    <p class="section-text">
+                        A chronological overview of my
+                        professional experience.
+                    </p>
+                </div>
+
+                <div class="timeline">
+
+                    <div class="timeline-item">
+                        <span class="timeline-date">
+                            July 2024 – Present
+                        </span>
+                        <h3>Business Project Advisor</h3>
+                        <div class="timeline-company">
+                            Kaushal & Company — Chartered Accountants
+                            | NCR
+                        </div>
+                        <p>
+                            Supporting business operations,
+                            digital documentation, operational
+                            coordination, market research and
+                            administrative processes.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-date">
+                            July 2022 – March 2024
+                        </span>
+                        <h3>Service Desk Technician</h3>
+                        <div class="timeline-company">
+                            Hatch Ltd. | Gurgaon, NCR
+                        </div>
+                        <p>
+                            Supported enterprise workplace
+                            operations, user lifecycle activities,
+                            access management, documentation
+                            and cross-functional coordination.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-date">
+                            September 2014 – March 2022
+                        </span>
+                        <h3>Senior Representative — Operations</h3>
+                        <div class="timeline-company">
+                            Concentrix India | Bengaluru
+                        </div>
+                        <p>
+                            Managed customer support operations,
+                            escalations, service quality,
+                            documentation and stakeholder
+                            communication in an SLA-driven
+                            environment.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-date">
+                            October 2011 – February 2014
+                        </span>
+                        <h3>Technical Support</h3>
+                        <div class="timeline-company">
+                            Cityland | Bengaluru
+                        </div>
+                        <p>
+                            Supported technical operations,
+                            customer enquiries, service
+                            coordination and day-to-day
+                            operational activities.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-date">
+                            October 2010 – September 2011
+                        </span>
+                        <h3>L2 Technical Support</h3>
+                        <div class="timeline-company">
+                            IBM | Bengaluru
+                        </div>
+                        <p>
+                            Provided enterprise remote support,
+                            incident resolution and knowledge
+                            documentation for global users.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-date">
+                            March 2009 – September 2010
+                        </span>
+                        <h3>Systems Engineering & Technical Support</h3>
+                        <div class="timeline-company">
+                            Sekurenext India and Defender Corporation
+                        </div>
+                        <p>
+                            Gained early experience in technical
+                            deployment, installation coordination,
+                            software implementation and
+                            customer support.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-date">
+                            January 2003 – February 2009
+                        </span>
+                        <h3>Recruitment Associate</h3>
+                        <div class="timeline-company">
+                            A-Team Consulting
+                        </div>
+                        <p>
+                            Worked in recruitment operations,
+                            candidate sourcing, preliminary
+                            screening, interview coordination,
+                            recruitment MIS and client
+                            communication.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PROFESSIONAL APPROACH -->
+
+        <section>
+            <div class="container">
+                <div class="section-heading">
+                    <div class="eyebrow">MY APPROACH</div>
+                    <h2>Three Areas of Professional Focus</h2>
+                </div>
+
+                <div class="approach-grid">
+
+                    <article class="approach-card">
+                        <div class="approach-number">01</div>
+                        <h3>People & HR</h3>
+                        <p>
+                            Understanding recruitment,
+                            employee lifecycle processes,
+                            people management and the
+                            importance of structured
+                            human resource operations.
+                        </p>
+                    </article>
+
+                    <article class="approach-card">
+                        <div class="approach-number">02</div>
+                        <h3>Business & Operations</h3>
+                        <p>
+                            Exploring operational efficiency,
+                            stakeholder coordination,
+                            documentation, service delivery
+                            and continuous process improvement.
+                        </p>
+                    </article>
+
+                    <article class="approach-card">
+                        <div class="approach-number">03</div>
+                        <h3>Management & Strategy</h3>
+                        <p>
+                            Applying management concepts,
+                            analytical thinking and business
+                            perspectives to understand
+                            organisational challenges
+                            and opportunities.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION AND RESEARCH -->
+
+        <section class="learning-section">
+            <div class="container">
+                <div class="section-heading">
+                    <div class="eyebrow">LEARNING & RESEARCH</div>
+                    <h2>Building Knowledge Beyond Experience</h2>
+                </div>
+
+                <div class="learning-grid">
+
+                    <article class="learning-card">
+                        <div class="learning-label">
+                            ACADEMIC BACKGROUND
+                        </div>
+                        <h3>MBA — Human Resource Management</h3>
+                        <p>
+                            My MBA studies provide a broader
+                            foundation in human resource
+                            management, organisational behaviour,
+                            business management and strategic
+                            thinking.
+                        </p>
+                    </article>
+
+                    <article class="learning-card">
+                        <div class="learning-label">
+                            RESEARCH INTEREST
+                        </div>
+                        <h3>
+                            AI, Employee Learning &
+                            Organisational Performance
+                        </h3>
+                        <p>
+                            My research explores the relationship
+                            between AI integration, employee
+                            learning, technostress and
+                            organisational performance.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PROFESSIONAL INTERESTS -->
+
+        <section>
+            <div class="container">
+                <div class="section-heading">
+                    <div class="eyebrow">AREAS OF INTEREST</div>
+                    <h2>Where My Interests Meet</h2>
+                    <p class="section-text">
+                        Areas that connect my professional
+                        experience with my ongoing learning.
+                    </p>
+                </div>
+
+                <div class="interests">
+                    <span class="interest">HR Operations</span>
+                    <span class="interest">Talent Acquisition</span>
+                    <span class="interest">People Management</span>
+                    <span class="interest">Business Operations</span>
+                    <span class="interest">Digital Transformation</span>
+                    <span class="interest">Process Improvement</span>
+                    <span class="interest">Organisational Development</span>
+                    <span class="interest">AI & Employee Learning</span>
+                    <span class="interest">Strategic Management</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONNECT -->
+
+        <section class="connect">
+            <div class="container">
+                <div class="eyebrow">LET'S CONNECT</div>
+                <h2>Explore Ideas & Opportunities</h2>
+                <p>
+                    Open to professional conversations,
+                    knowledge sharing and opportunities
+                    to connect.
+                </p>
+
+                <a
+                    class="button"
+                    href="https://www.linkedin.com/in/aman-nagpal10/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Connect on LinkedIn →
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="container footer-content">
+            <span>
+                © 2026 Aman Nagpal | Aman Showcase
+            </span>
+            <a
+                href="https://www.linkedin.com/in/aman-nagpal10/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                LinkedIn
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>
