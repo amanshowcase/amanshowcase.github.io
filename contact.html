@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Contact Aman Nagpal for professional networking,
+          HR and business discussions, and learning-related enquiries.">
+
+    <title>Contact | Aman Nagpal — Aman Showcase</title>
+
+    <style>
+        :root {
+            --bg: #0b1022;
+            --section: #10172b;
+            --card: #121b30;
+            --text: #f1f5f9;
+            --muted: #a8b5cb;
+            --blue: #60a5fa;
+            --purple: #818cf8;
+            --border: #29364e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1140px, 90%);
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 16, 34, 0.96);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(14px);
+        }
+
+        .navbar {
+            min-height: 58px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--blue);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .nav-links a {
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--blue);
+        }
+
+        /* PAGE INTRODUCTION */
+
+        .page-intro {
+            padding: 95px 0 75px;
+            text-align: center;
+            background:
+                radial-gradient(
+                    ellipse at top,
+                    rgba(59, 130, 246, 0.12),
+                    transparent 65%
+                );
+        }
+
+        .eyebrow {
+            display: inline-block;
+            color: var(--blue);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: clamp(34px, 5vw, 52px);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(
+                90deg,
+                var(--blue),
+                var(--purple)
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .intro-text {
+            max-width: 720px;
+            margin: auto;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        section {
+            padding: 70px 0;
+        }
+
+        .section-heading {
+            margin-bottom: 30px;
+        }
+
+        .section-heading .eyebrow {
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: clamp(25px, 4vw, 34px);
+            line-height: 1.3;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-bottom: 9px;
+        }
+
+        .section-text {
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 760px;
+            margin-top: 10px;
+        }
+
+        /* CONTACT LAYOUT */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        .panel {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+        }
+
+        .panel p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .contact-methods {
+            display: grid;
+            gap: 14px;
+            margin-top: 22px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 15px 17px;
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid var(--border);
+            border-radius: 11px;
+            transition:
+                border-color 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .contact-method:hover {
+            border-color: var(--blue);
+            transform: translateY(-2px);
+        }
+
+        .method-label {
+            color: var(--muted);
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .method-value {
+            font-size: 14px;
+            font-weight: 700;
+            overflow-wrap: anywhere;
+        }
+
+        .method-arrow {
+            color: var(--blue);
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        /* BUTTONS */
+
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .button,
+        .secondary-button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 43px;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            transition: opacity 0.2s ease;
+        }
+
+        .button {
+            background: linear-gradient(
+                90deg,
+                #3b82f6,
+                #6366f1
+            );
+            color: #fff;
+        }
+
+        .secondary-button {
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .button:hover,
+        .secondary-button:hover {
+            opacity: 0.86;
+        }
+
+        .secondary-button:hover {
+            border-color: var(--blue);
+        }
+
+        /* CONTACT FORM */
+
+        .form-panel {
+            background: var(--section);
+        }
+
+        .form-group {
+            margin-top: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px 13px;
+            color: var(--text);
+            background: #0b1022;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font: inherit;
+            font-size: 13px;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: 2px solid rgba(96, 165, 250, 0.35);
+            border-color: var(--blue);
+        }
+
+        textarea {
+            min-height: 125px;
+            resize: vertical;
+        }
+
+        .form-note {
+            margin-top: 13px;
+            font-size: 11px !important;
+            line-height: 1.6;
+        }
+
+        /* PROFESSIONAL PLATFORMS */
+
+        .social-section {
+            background: var(--section);
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 28px;
+        }
+
+        .social-card {
+            padding: 22px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            transition:
+                border-color 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .social-card:hover {
+            border-color: var(--blue);
+            transform: translateY(-2px);
+        }
+
+        .social-card p {
+            color: var(--muted);
+            font-size: 13px;
+            margin: 7px 0 15px;
+        }
+
+        .text-link {
+            color: var(--blue);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        /* CLOSING SECTION */
+
+        .closing {
+            text-align: center;
+            background:
+                radial-gradient(
+                    ellipse at center,
+                    rgba(99, 102, 241, 0.09),
+                    transparent 70%
+                );
+        }
+
+        .closing p {
+            max-width: 680px;
+            margin: 12px auto 0;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 23px 0;
+            border-top: 1px solid var(--border);
+            background: #080c19;
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-content a:hover {
+            color: var(--blue);
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 760px) {
+            .navbar {
+                flex-direction: column;
+                padding: 13px 0;
+            }
+
+            .nav-links {
+                gap: 14px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .page-intro {
+                padding: 65px 0 55px;
+            }
+
+            .contact-grid,
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 52px 0;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .nav-links {
+                gap: 10px;
+                font-size: 11px;
+            }
+
+            .panel {
+                padding: 21px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header>
+        <div class="container navbar">
+
+            <a href="index.html" class="logo">
+                AMAN<span>SHOWCASE</span>
+            </a>
+
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="experience.html">Experience</a>
+                <a href="education.html">Education</a>
+                <a href="projects.html">Projects</a>
+                <a href="resume.html">Resume</a>
+                <a href="contact.html"
+                   class="active"
+                   aria-current="page">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- PAGE INTRODUCTION -->
+
+        <section class="page-intro">
+            <div class="container">
+
+                <div class="eyebrow">
+                    CONTACT &amp; PROFESSIONAL CONNECTIONS
+                </div>
+
+                <h1>
+                    Let's
+                    <span class="gradient-text">Connect</span>
+                </h1>
+
+                <p class="intro-text">
+                    For professional networking, HR and business
+                    discussions, learning-related enquiries or a
+                    conversation about my work, you can reach me
+                    through the options below.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- CONTACT OPTIONS -->
+
+        <section>
+            <div class="container">
+
+                <div class="contact-grid">
+
+                    <!-- DIRECT CONTACT -->
+
+                    <article class="panel">
+
+                        <div class="eyebrow">
+                            DIRECT CONTACT
+                        </div>
+
+                        <h2>Get in Touch</h2>
+
+                        <p>
+                            Choose the contact method that works
+                            best for you.
+                        </p>
+
+                        <div class="contact-methods">
+
+                            <a class="contact-method"
+                               href="mailto:aman10nagpal@gmail.com?subject=Professional%20Enquiry">
+
+                                <span>
+                                    <span class="method-label">
+                                        Email
+                                    </span><br>
+
+                                    <span class="method-value">
+                                        Email for Professional Enquiries
+                                    </span>
+                                </span>
+
+                                <span class="method-arrow"
+                                      aria-hidden="true">↗</span>
+                            </a>
+
+
+                            <a class="contact-method"
+                               href="https://www.linkedin.com/in/aman-nagpal10/"
+                               target="_blank"
+                               rel="noopener noreferrer">
+
+                                <span>
+                                    <span class="method-label">
+                                        LinkedIn
+                                    </span><br>
+
+                                    <span class="method-value">
+                                        Professional Networking
+                                    </span>
+                                </span>
+
+                                <span class="method-arrow"
+                                      aria-hidden="true">↗</span>
+                            </a>
+
+
+                            <a class="contact-method"
+                               href="https://topmate.io/learnwithaman"
+                               target="_blank"
+                               rel="noopener noreferrer">
+
+                                <span>
+                                    <span class="method-label">
+                                        Topmate
+                                    </span><br>
+
+                                    <span class="method-value">
+                                        Sessions &amp; Learning Resources
+                                    </span>
+                                </span>
+
+                                <span class="method-arrow"
+                                      aria-hidden="true">↗</span>
+                            </a>
+
+
+                            <a class="contact-method"
+                               href="https://linktr.ee/amannagpal10"
+                               target="_blank"
+                               rel="noopener noreferrer">
+
+                                <span>
+                                    <span class="method-label">
+                                        Linktree
+                                    </span><br>
+
+                                    <span class="method-value">
+                                        More Ways to Connect
+                                    </span>
+                                </span>
+
+                                <span class="method-arrow"
+                                      aria-hidden="true">↗</span>
+                            </a>
+
+                        </div>
+
+                        <div class="button-row">
+
+                            <a class="button"
+                               href="mailto:aman10nagpal@gmail.com?subject=Professional%20Enquiry">
+                                Send an Email →
+                            </a>
+
+                            <a class="secondary-button"
+                               href="https://www.linkedin.com/in/aman-nagpal10/"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                View LinkedIn
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- CONTACT FORM -->
+
+                    <article class="panel form-panel">
+
+                        <div class="eyebrow">
+                            SEND AN ENQUIRY
+                        </div>
+
+                        <h2>Contact Form</h2>
+
+                        <p>
+                            Use this form to send a message without
+                            displaying your email address on the page.
+                        </p>
+
+                        <form action="https://formsubmit.co/aman10nagpal@gmail.com"
+                              method="POST">
+
+                            <input type="hidden"
+                                   name="_subject"
+                                   value="New enquiry from Aman Showcase">
+
+                            <input type="hidden"
+                                   name="_template"
+                                   value="table">
+
+                            <input type="hidden"
+                                   name="_captcha"
+                                   value="true">
+
+                            <input type="text"
+                                   name="_honey"
+                                   style="display:none"
+                                   tabindex="-1"
+                                   autocomplete="off"
+                                   aria-hidden="true">
+
+
+                            <div class="form-group">
+                                <label for="name">
+                                    Your name
+                                </label>
+
+                                <input id="name"
+                                       name="name"
+                                       type="text"
+                                       autocomplete="name"
+                                       required
+                                       maxlength="100">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="email">
+                                    Your email address
+                                </label>
+
+                                <input id="email"
+                                       name="email"
+                                       type="email"
+                                       autocomplete="email"
+                                       required
+                                       maxlength="160">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="subject">
+                                    Subject
+                                </label>
+
+                                <input id="subject"
+                                       name="subject"
+                                       type="text"
+                                       required
+                                       maxlength="160">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="message">
+                                    Message
+                                </label>
+
+                                <textarea id="message"
+                                          name="message"
+                                          required
+                                          maxlength="5000"></textarea>
+                            </div>
+
+
+                            <div class="button-row">
+                                <button class="button"
+                                        type="submit"
+                                        style="border:0; cursor:pointer; font-family:inherit;">
+                                    Submit Enquiry →
+                                </button>
+                            </div>
+
+                            <p class="form-note">
+                                This form is processed by FormSubmit
+                                and forwarded to my Gmail. The first
+                                submission may require email activation.
+                                Please avoid including passwords,
+                                financial details or other sensitive
+                                information.
+                            </p>
+
+                        </form>
+
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- PROFESSIONAL PLATFORMS -->
+
+        <section class="social-section">
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="eyebrow">
+                        PROFESSIONAL PLATFORMS
+                    </div>
+
+                    <h2>Connect Beyond Email</h2>
+
+                    <p class="section-text">
+                        Explore my professional profile,
+                        learning-related offerings and other
+                        public links.
+                    </p>
+
+                </div>
+
+
+                <div class="social-grid">
+
+                    <article class="social-card">
+
+                        <h3>LinkedIn</h3>
+
+                        <p>
+                            Connect for professional networking
+                            and updates.
+                        </p>
+
+                        <a class="text-link"
+                           href="https://www.linkedin.com/in/aman-nagpal10/"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Visit LinkedIn →
+                        </a>
+
+                    </article>
+
+
+                    <article class="social-card">
+
+                        <h3>Topmate</h3>
+
+                        <p>
+                            Explore available sessions and the
+                            MBA-HR revision kit.
+                        </p>
+
+                        <a class="text-link"
+                           href="https://topmate.io/learnwithaman"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Visit Topmate →
+                        </a>
+
+                    </article>
+
+
+                    <article class="social-card">
+
+                        <h3>Linktree</h3>
+
+                        <p>
+                            Find additional links and online
+                            profiles in one place.
+                        </p>
+
+                        <a class="text-link"
+                           href="https://linktr.ee/amannagpal10"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Visit Linktree →
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- CLOSING SECTION -->
+
+        <section class="closing">
+            <div class="container">
+
+                <div class="eyebrow">
+                    AMAN SHOWCASE
+                </div>
+
+                <h2>Thank You for Visiting</h2>
+
+                <p>
+                    I welcome thoughtful professional conversations,
+                    knowledge-sharing and opportunities to connect.
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="container footer-content">
+
+            <span>
+                © 2026 Aman Nagpal | Aman Showcase
+            </span>
+
+            <a href="https://www.linkedin.com/in/aman-nagpal10/"
+               target="_blank"
+               rel="noopener noreferrer">
+                LinkedIn
+            </a>
+
+        </div>
+    </footer>
+
+</body>
+</html>
